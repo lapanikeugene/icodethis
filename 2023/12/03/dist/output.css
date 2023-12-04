@@ -751,6 +751,10 @@ video {
   background-image: url('./seamless.png');
 }
 
+.bg-\[url\(\'https\:\/\/github\.com\/lapanikeugene\/icodethis\/blob\/master\/2023\/12\/03\/dist\/seamless\.png\?raw\=true\'\)\] {
+  background-image: url('https://github.com/lapanikeugene/icodethis/blob/master/2023/12/03/dist/seamless.png?raw=true');
+}
+
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
