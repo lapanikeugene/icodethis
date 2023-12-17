@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+
+<script>
+const getTimeRemaining = ()=>{
+    const now = new Date();
+  const christmas = new Date(now.getFullYear(), 11, 25); 
+
+  const timeDiff = christmas - now;
+
+  // Calculate days, hours, minutes, and seconds
+  const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+  return {
+    days,
+    hours,
+    minutes,
+    seconds
+  };
+}
+
+const  updateCountdown = ()=> {
+  const elDays = document.getElementById('days');
+  const elHours = document.getElementById('hours');
+  const elMinutes = document.getElementById('minutes');
+  const elSeconds = document.getElementById('seconds');
+  const { days, hours, minutes, seconds } = getTimeRemaining();
+
+  elDays.innerHTML = `${days < 10 ? '0'+days : days}`;
+  elHours.innerHTML = `${hours < 10 ? '0'+hours : hours}`;
+  elMinutes.innerHTML = `${minutes < 10 ? '0'+minutes : minutes}`;
+  elSeconds.innerHTML = `${seconds < 10 ? '0'+seconds : seconds}`;
+
+
+}
+
+setInterval(updateCountdown, 1000);
+</script>
+<body class="h-screen w-screen flex justify-center items-center  bg-[#A2B2BF]">
+
+    <section  class="max-w-4xl w-full h-[400px] bg-cover bg-[url('https://icodethis.com/images/iCodeMas/snow_bg.png')] py-10" >
+        <h1 class="my-3 text-4xl text-white font-bold text-center">XMas is coming to town</h1>
+        <p class="text-center text-white text-xs mb-5">It's time for Glühwein, Glühbier and Glühgin! </p>
+        
+        
+        <section class="w-full flex justify-center gap-x-2 items-center  text-[#2A5D73] [&>div>span]:text-6xl [&>div]:font-bold [&>div]:bg-white [&>div]:shadow-md [&>div]:rounded-lg [&>div]:p-2">
+            <div>
+                <span id="days"></span>
+               <div class="text-center">Days</div> 
+            </div>
+            <div>
+                <span id="hours"></span>
+               <div class="text-center">Hours</div> 
+            </div>
+            <div>
+                <span id="minutes"></span>
+               <div class="text-center">Minutes</div> 
+            </div>
+            <div id="seconds-div">
+                <span id="seconds"></span>
+               <div class="text-center">Seconds</div> 
+            </div>
+        </section>
+        </section>
+
+</body>
+</html>
