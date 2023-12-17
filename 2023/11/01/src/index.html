@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+<style>
+    /* Your existing CSS styles here */
+
+    .image-container, .heading-container, .p-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-transition, .heading-transition, .p-transition {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+    }
+
+    @keyframes slideOutLeft {
+      0% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+    }
+
+    @keyframes slideInRight {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .initial-hidden {
+      display: none;
+    }
+  </style>
+
+<script>
+        let curIndex = 0; 
+        let images = [];
+        let headings= [];
+
+     document.addEventListener('DOMContentLoaded', function() {
+     images = document.querySelectorAll('.image-transition');
+     headings = document.querySelectorAll('.heading-transition');
+     ps = document.querySelectorAll('.p-transition');
+     
+     images[curIndex].classList.remove('initial-hidden');
+     headings[curIndex].classList.remove('initial-hidden');
+     ps[curIndex].classList.remove('initial-hidden');
+     
+
+    console.log(images)
+
+    
+
+})
+
+function selectButton(index) {
+    if(index>1){
+        const startButton = document.querySelector('#start-button');
+            startButton.innerHTML="Start";
+    }
+        if(index>2){
+            return;}
+        let oldIndex = (index - 1 + images.length) % images.length;
+        console.log(images);
+
+   
+      const buttons = document.querySelectorAll('#buttonContainer > button');
+        curIndex = index; 
+     
+      buttons.forEach(button => {
+        button.style.backgroundColor = '#EBF2FF';
+      });
+  
+   
+      buttons[index].style.backgroundColor = '#425ECB';
+
+      if (images[oldIndex]) {
+          images[oldIndex].style.animation = 'slideOutLeft 300ms ease-in-out';
+          headings[oldIndex].style.animation = 'slideOutLeft 300ms ease-in-out';
+       
+
+        }
+
+        if (images[index]) {
+          images[index].style.animation = 'slideInRight 300ms ease-in-out';
+          headings[index].style.animation = 'slideInRight 300ms ease-in-out';
+          ps[index].style.animation = 'slideInRight 300ms ease-in-out';
+          images[index].classList.remove('initial-hidden');
+          headings[index].classList.remove('initial-hidden');
+          ps[index].classList.remove('initial-hidden');
+        }
+
+    setTimeout(() => {
+        if (images[oldIndex]) {
+        images[oldIndex].style.animation = '';
+        images[oldIndex].style.transform = 'translateX(100%)';
+        headings[oldIndex].style.animation = '';
+        headings[oldIndex].style.transform = 'translateX(100%)';
+        ps[oldIndex].style.animation = '';
+        ps[oldIndex].style.transform = 'translateX(100%)';
+      }
+
+      if (images[index]) {
+        images[index].style.animation = '';
+        headings[index].style.animation = '';
+        ps[index].style.animation = '';
+      }
+    }, 300);
+
+    setTimeout(()=>{
+        headings[oldIndex].classList.add('initial-hidden');
+        ps[oldIndex].classList.add('initial-hidden');
+    },200)
+    
+    }
+
+  </script>
+
+
+<body class="bg-[#D1E3FF] flex justify-center items-center h-screen">
+   
+<section class="bg-white min-h-[500px] w-[300px] relative overflow-hidden  rounded-lg shadow-lg flex justify-center items-start">
+    <section class="z-20 h-full relative flex flex-col justify-between items-center w-[200px]"> 
+        <div class="image-container w-24 h-24 mt-20">
+            <img class="w-24 image-transition initial-hidden" src="./assets/1.png" id="image1" />
+            <img class="w-24 image-transition initial-hidden" src="./assets/2.png" id="image2" />
+            <img class="w-24 image-transition initial-hidden" src="./assets/3.png" id="image3" />
+        </div>
+        <section class="heading-container w-full h-20 font-bold text-[#4A5CD4] text-center text-lg my-2  ">
+            <h1  class="initial-hidden heading-transition">Find campings near you</h1>
+            <h1  class="initial-hidden heading-transition">Reserve directly from your phone</h1>
+            <h1  class="initial-hidden heading-transition">Get direction from the locations</h1>
+        </section>
+        <section class="text-center text-sm my-12 p-container  w-full h-4  ">
+            <p class="initial-hidden p-transition">Lorem ipsum dolor sit amet.</p>
+            <p class="initial-hidden p-transition"> At vero eos et accusam et justo .</p>
+            <p class="initial-hidden p-transition">Stet clita kasd gubergren.</p>
+           
+        </section>
+       
+        <nav class="flex justify-center gap-x-2 w-full"  id="buttonContainer">
+            <button class="w-2 h-2 rounded-full bg-blue-600" onclick="selectButton(0)"></button>
+            <button class="w-2 h-2 rounded-full bg-[#EBF2FF] " onclick="selectButton(1)"></button>
+            <button class="w-2 h-2 rounded-full bg-[#EBF2FF] " onclick="selectButton(2)"></button>
+        </nav>
+        <nav class="flex w-full justify-around mt-10 ">
+            <button class="bg-[#ECEEF9] capitalize px-3 py-2 rounded-full w-20  active:bg-white active:border"  onclick="curIndex++;selectButton(curIndex);">skip</button>
+            <button class="bg-[#425ECB] capitalize px-3 py-2 rounded-full w-20  active:bg-white active:border font-bold text-white active:text-black" onclick="curIndex++;selectButton(curIndex);" id="start-button">next</button>
+        </nav>
+    </section>
+    <!-- Background -->
+    <div class="w-[500px] h-[500px] rounded-full bg-[#EBF2FF] absolute -top-[250px] -right-[120px] z-10"></div>
+    <div class="w-[500px] h-[500px] rounded-full bg-[#F3F9FE] absolute -top-[220px] -right-[160px] z-0"></div>
+</section>
+</body>
+</html>
