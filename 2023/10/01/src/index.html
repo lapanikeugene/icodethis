@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+<style>
+  #info-div {
+    transform-origin: bottom center;
+  
+
+  }
+</style>
+<script>
+  const showInfo =  () =>{
+    const animatedDiv = document.getElementById('info-div');
+    const but = document.getElementById('info-button');
+    animatedDiv.style.transform = 'scaleY(0.9)';
+
+    const butTop = but.getBoundingClientRect().top;
+    animatedDiv.style.bottom = butTop+80+"px";
+
+  }
+</script>
+<body class="bg-[#2A326F] justify-center flex items-center h-screen">
+  <section id="info-div"
+  
+  style="transform: scale(0);"
+  class="absolute bg-[#172240]  shadow-md rounded-md min-w-[300px] transition-all duration-500 origin-bottom">
+    <img  src="./assets/2.png" class="w-24 rounded-full absolute left-1/2 -translate-x-1/2 -top-12"/>
+      <h3 class="text-2xl text-[#C0C8DE] text-center mt-14 -mb-1">Alexandra Bolton</h3>
+      <h5 class="text-center text-[#8A95B3] text-lg">@soomenick</h5>
+      <div class="text-lg text-[#8A95B3] my-5 text-center">San Francisco</div>
+      <hr class="mx-10 my-8 divide-[#2A326F] border-[#2A326F] "/>
+      <div class="flex justify-center w-full my-3 ">
+        <img  src="./assets/1.png" class="w-8 rounded-full border border-gray-800 "/>
+        <img  src="./assets/3.png" class="w-8 rounded-full border border-gray-800 -mx-4"/>
+        <img  src="./assets/4.png" class="w-8 rounded-full border border-gray-800"/>
+
+      </div>
+      <div class="text-center text-sm">
+        <span class="text-white ">Followed by <span class="underline">3 people </span> you follow </span>
+
+      </div>
+      <footer class="text-center w-full mt-3 mb-10">
+        <button class="py-2 px-5 rounded-full bg-[#6495FF] text-white w-36">Follow</button>
+
+      </footer>
+      <div class="w-0 h-0 absolute -bottom-[20px] left-1/2 -translate-x-1/2
+        border-l-[10px] border-l-transparent
+        border-t-[20px] border-t-[#172240]
+        border-r-[10px] border-r-transparent">
+      </div>
+  </section>
+  <button id="info-button" class="group w-[300px] flex justify-center gap-x-2 items-center relative transition-all hover:scale-125 duration-300" onclick="showInfo()">
+    
+    <img  src="./assets/2.png" class="w-14 rounded-full  group-hover:shadow-lg group-hover:border-4 group-hover:border-white"/>
+    <span class="font-bold text-[#C0C8DE] group-hover:shadow-lg group-hover:text-white">Alexandra Bolton</span>
+  </button>
+</body>
+</html>
