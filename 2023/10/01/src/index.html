@@ -16,14 +16,14 @@
   const showInfo =  () =>{
     const animatedDiv = document.getElementById('info-div');
     const but = document.getElementById('info-button');
-    animatedDiv.style.transform = 'scaleY(0.9)';
+    animatedDiv.style.transform = 'scaleY(1)';
 
     const butTop = but.getBoundingClientRect().top;
-    animatedDiv.style.bottom = butTop+80+"px";
+    animatedDiv.style.top = butTop-390+"px";
 
   }
 </script>
-<body class="bg-[#2A326F] justify-center flex items-center h-screen">
+<body class="bg-[#2A326F] justify-end flex items-end h-screen p-10">
   <section id="info-div"
   
   style="transform: scale(0);"
