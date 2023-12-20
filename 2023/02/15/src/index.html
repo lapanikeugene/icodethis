@@ -1,0 +1,147 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+
+<!-- Change code below this line -->
+<body class="bg-[#E8EBF3] flex  justify-center items-center min-h-screen">
+   
+        <div class="bg-[#0C1227] text-white  py-4 px-8 rounded-full shadow-lg absolute -top-10 left-1/2 -translate-x-1/2 transition-all opacity-0 duration-300" id="notification">
+            Color <span class="font-bold">#162D46</span> copied to your clipboard. 
+        </div>
+    
+    <article class="mt-10">
+        <h1 class="text-[#101428] text-3xl font-bold text-center">Color pallete generator</h1>
+        <section class="mt-14 [&>div]:bg-white [&>div]:transition-all [&>div]:cursor-pointer [&>div]:relative [&>div]:duration-300 [&>div]:w-52 [&>div]:p-4 [&>div]:rounded-xl [&>div]:shadow-sm grid xl:grid-cols-5 lg:grid-cols-3 grid-cols-2 gap-5">
+            <div class="group hover:-translate-y-10 hover:shadow-2xl active:filter active:brightness-50 "  onclick="copyToCB(0)">
+                <div class="group-active:block hidden absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2 text-white/90">copied!</div>
+                <div class="w-full h-60 bg-[#585A5A] color-display"></div>
+                <h4 class="text-[#585A5A] uppercase text-xl font-bold text-center my-2 color-name">#162D46</h4>
+            </div>
+            <div class="group hover:-translate-y-10 hover:shadow-2xl  active:filter active:brightness-50   " onclick="copyToCB(1)">
+                <div class="group-active:block hidden absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2 text-white/90">copied!</div>
+
+                <div class="group w-full h-60 bg-[#585A5A] color-display transition duration-500 ease-in-out "></div>
+                <h4 class="text-[#585A5A] uppercase text-xl font-bold text-center my-2 color-name">#162D46</h4>
+            </div>
+            <div class=" group hover:-translate-y-10 hover:shadow-2xl  active:filter active:brightness-50  " onclick="copyToCB(2)">
+                <div class="group-active:block hidden absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2 text-white/90">copied!</div>
+
+                <div class="w-full h-60 bg-[#585A5A] color-display transition duration-500 ease-in-out "></div>
+                <h4 class="text-[#585A5A] uppercase text-xl font-bold text-center my-2 color-name">#162D46</h4>
+            </div>
+            <div class=" group hover:-translate-y-10  hover:shadow-2xl active:filter active:brightness-50  " onclick="copyToCB(3)">
+                <div class="group-active:block hidden absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2 text-white/90">copied!</div>
+
+                <div class="w-full h-60 bg-[#585A5A] color-display transition duration-500 ease-in-out "></div>
+                <h4 class="text-[#585A5A] uppercase text-xl font-bold text-center my-2 color-name">#162D46</h4>
+            </div>
+            <div class="group hover:-translate-y-10   hover:shadow-2xl  active:filter active:brightness-50 " onclick="copyToCB(4)">
+                <div class="group-active:block hidden absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2 text-white/90">copied!</div>
+
+                <div class="w-full h-60 bg-[#585A5A] color-display transition duration-500 ease-in-out "></div>
+                <h4 class="text-[#585A5A] uppercase text-xl font-bold text-center my-2 color-name">#162D46</h4>
+            </div>
+        </section>
+        <section class="text-center mt-20">
+            <button class="bg-[#7D6BCA] hover:bg-[#8a77dd] px-20 py-4 rounded-lg text-white active:translate-y-1 transition-all duration-75" onclick="colorGenerator(); ">Generate Pallete</button>
+            <div>Or just press the "Spacebar" to generate new pallete</div>
+        </section>
+        <footer class="flex justify-center items-center mt-20">
+            <div class="bg-white text-[#585A5A]  py-4 px-8 rounded-full shadow-sm w-[460px] text-center text-sm">
+               Click to copy individual color . Press "C" to copy pallete.  
+            </div>
+        </footer>
+    </article>
+</body>
+<script>
+     let colorArray = [];
+
+     
+    const  getRandomHexColor = () =>{
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  
+  return color;
+}
+const colorGenerator = () => {
+    colorArray  = [getRandomHexColor(),getRandomHexColor(),getRandomHexColor(),getRandomHexColor(),getRandomHexColor()];
+    const names = document.querySelectorAll('.color-name');
+    const displays = document.querySelectorAll('.color-display');
+    console.log(names);
+    console.log(colorArray);
+    for(const i in names){
+        console.log(names[i]);
+        names[i].innerHTML = colorArray[i];
+       if(displays[i].style !== undefined) displays[i].style.backgroundColor = colorArray[i];
+    }
+}
+colorGenerator();
+
+
+const showNotification = (i)=>{
+
+    const notification = document.getElementById('notification');
+    notification.classList.add('opacity-100');
+    notification.classList.add('top-10');
+    notification.innerHTML = `Color <span class="font-bold">#162D46</span> copied to your clipboard.`;
+
+    const spanInsideNotification = notification.querySelector('span');
+    spanInsideNotification.innerHTML=colorArray[i];
+
+    setTimeout(()=>{
+        notification.classList.remove('opacity-100');
+    notification.classList.remove('top-10');
+
+    },600)
+}
+
+
+const showNotificationPallete = ()=>{
+
+const notification = document.getElementById('notification');
+notification.classList.add('opacity-100');
+notification.classList.add('top-10');
+notification.innerHTML = "All pallete copied to your clipboard"
+
+setTimeout(()=>{
+    notification.classList.remove('opacity-100');
+notification.classList.remove('top-10');
+
+},600)
+}
+
+const copyToCB = (i)=>{
+    navigator.clipboard.writeText(colorArray[i]);
+
+    showNotification(i);
+
+}
+
+
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space') {
+        colorGenerator();
+
+    }
+
+    if(event.key === 'c' || event.key === 'C'){
+        navigator.clipboard.writeText(colorArray.join(', '));
+        showNotificationPallete();
+    }
+});
+
+</script>
+</html>
