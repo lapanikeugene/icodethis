@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<script>
+const hideNotification = ()=>{
+    const d = document.getElementById("cookies-notification");
+    d.classList.add('opacity-0');
+
+    setTimeout(()=>{
+        d.classList.add('hidden');
+    },300)
+}
+</script>
+
+<!-- Change code below this line -->
+<body class="bg-[#5B6979] flex  justify-center items-center min-h-screen overflow-hidden">
+  <div class="w-screen  bg-[#EAF4FC] fixed bottom-0 flex justify-center items-center gap-5 px-10 py-5 origin-bottom duration-300 transition-all" id="cookies-notification">
+    <div>
+        <img src="./assets/cookie.png" class="w-14" />
+    </div>
+    <div class="flex-grow">
+        By continuing to use this website, you consent to the use of cookies.
+    </div>
+    <button class="bg-white py-2 px-4 rounded-full relative group overflow-hidden">
+       <span class="group-hover:text-white transition-all z-40 relative">Learn More</span> 
+    <div class="absolute top-0 left-0 w-0 h-10 transition-all group-hover:w-full bg-[#227393] z-10   "></div>
+    </button>
+    <button class="bg-white py-2 px-4 rounded-full relative group overflow-hidden">
+        <span class="group-hover:text-white transition-all z-40 relative" onclick="hideNotification()">Okay</span> 
+     <div class="absolute top-0 left-0 w-0 h-10 transition-all group-hover:w-full bg-orange-500 z-10   "></div>
+     </button>
+  </div>
+</body>
+<script>
+  
+</script>
+</html>
