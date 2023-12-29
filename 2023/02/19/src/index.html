@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+
+<!-- Change code below this line -->
+<body class="bg-[#1C235A] flex  justify-center items-center min-h-screen overflow-hidden text-[#1A1831]">
+    <section class="shadow-2xl h-80 w-[450px] bg-[#1E245D] rounded-3xl text-white p-5 border-t border-t-[#F80797] relative">
+        <button class="absolute text-lg hover:font-bold hover:border-[#F80797] border w-8 h-8 rounded-full top-2 right-2 border-black flex justify-center items-center active:translate-y-1"><div class="relative -translate-y-[5px]">...</div></button>
+        <h1 class="text-2xl font-bold">Lorem ipsum dolor sit amet</h1>
+        <p class="text-sm">29.12.2023</p>
+        <p class="first-letter:capitalize text-sm mt-5">consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+        <div class="w-full flex justify-between items-center gap-x-3 text-xl mt-8">
+            Tasks 
+            <div class="w-full bg-[#0F1449] flex-grow h-4 rounded-full relative translate-y-[1px] overflow-hidden" id="progress-bar">
+                <div class="w-0 h-4 absolute bg-[#25E1D3]" id="progress">
+
+                </div>
+            </div>
+            <span id="percents" class="w-20">
+                %
+            </span>
+        </div>
+        <div class="flex gap-x-8 justify-start items-center [&>img]:w-12  [&>img]:rounded-full  [&>img]:ring-black  [&>div]: mt-8 ">
+           <img src="./assets/1.png"  class="hover:outline-2 outline-[1px] hover:outline-[#F80797] outline outline-offset-2   outline-black      " />
+            <img src="./assets/2.png"  class="hover:outline-2 outline-[1px] hover:outline-[#F80797] outline outline-offset-2   outline-black      " />
+            <img src="./assets/3.png"  class="hover:outline-2 outline-[1px] hover:outline-[#F80797] outline outline-offset-2   outline-black      " />
+            <img src="./assets/4.png"  class="hover:outline-2 outline-[1px] hover:outline-[#F80797] outline outline-offset-2   outline-black      " />
+            
+        </div>
+    </section>
+</body>
+<script>
+  const aim = 43;
+  let cur = 0;
+  const perDisplay = document.getElementById('percents');
+  const progress = document.getElementById('progress');
+  perDisplay.innerText = cur+"%";
+  let currentColor = [248, 7, 151];
+
+  const progressInterval = ()=>{
+    if(cur < aim){ cur++;
+        progress.style.width = cur +"%";
+        perDisplay.innerText = cur+"%";
+    }
+    else{
+        clearInterval(intervalId);
+    }
+  }
+
+
+  const intervalId =   setInterval(progressInterval,20);
+
+
+
+</script>
+</html>

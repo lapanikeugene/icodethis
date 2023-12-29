@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+
+<!-- Change code below this line -->
+<body class="bg-[#F8F9FD] flex  justify-center items-center min-h-screen overflow-hidden text-[#1A1831]">
+  <section class="min-h-96  max-w-3xl bg-white rounded-xl w-full p-10 shadow-lg">
+    <h1 class="text-center text-3xl font-bold">We're looking for<br/>
+        co-founders</h1>
+
+        <p class="text-center mt-5">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur inventore soluta distinctio.
+        </p>
+        <p class="text-center mt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti odio sint cum laborum ratione, asperiores nisi illum necessitatibus, ab non ex repudiandae repellat quod quidem voluptates, distinctio nulla quam dolore.</p>
+  
+
+        <h3 class="text-xl font-bold text-center mt-5">Available positions        </h3>
+        <section class="flex justify-center gap-x-3 my-3 [&>div]:w-32 [&>div]:transition-all ">
+            <div class="border border-gray-300 delay-0 duration-300 move-div opacity-0 -translate-y-1/2 scale-150">
+                <div class="w-full h-full hover:bg-blue-50  p-5">
+                    <img src="https://www.svgrepo.com/show/475050/mushroom-from-mario.svg" class="w-16 mx-auto" />
+                    <h4 class="font-bold mt-3 text-sm text-center">Business</h4>
+                </div>
+             
+            </div>
+            <div class="border border-gray-300  delay-100 duration-300 move-div opacity-0 -translate-y-1/2 scale-150">
+                <div class="w-full h-full hover:bg-blue-50  p-5">
+                <img src="https://www.svgrepo.com/show/246923/character.svg" class="w-16 mx-auto" />
+                <h4 class="font-bold mt-3 text-sm text-center">Marketing</h4>
+            </div>
+            </div>
+            <div class="border border-gray-300 delay-300 duration-300 move-div opacity-0 -translate-y-1/2 scale-150">
+                <div class="w-full h-full hover:bg-blue-50  p-5">
+                <img src="https://www.svgrepo.com/show/246915/mushroom.svg" class="w-16 mx-auto" />
+                <h4 class="font-bold mt-3 text-sm text-center">Front-end Dev</h4>
+            </div>
+            </div>
+            <div class="border border-gray-300   delay-500 duration-300 move-div opacity-0 -translate-y-1/2 scale-150">
+                <div class="w-full h-full hover:bg-blue-50  p-5">
+                <img src="https://www.svgrepo.com/show/246920/queen.svg" class="w-16 mx-auto" />
+                <h4 class="font-bold mt-3 text-sm text-center">Back-end Dev</h4>
+            </div>
+            </div>
+        </section>
+
+        <footer class="text-center">
+            <button class=" rounded-full w-full py-2 my-5 px-10 bg-[#3457DD] text-white active:translate-y-2  transition-all duration-200 hover:bg-[#346fdd] active:hover:bg-[#adc9ff] ">get in touch</button>
+        </footer>
+  
+    </section>
+</body>
+<script>
+    const f =  () => {
+        const arr = document.querySelectorAll(".move-div");
+console.log(arr);
+for (const el of arr){
+    el.classList.add("translate-y-0");
+    el.classList.add("opacity-100")
+    el.classList.add("scale-100")
+}
+
+    }
+
+    setTimeout(()=>{
+
+        f();
+    },300)
+    
+
+</script>
+</html>
