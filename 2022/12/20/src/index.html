@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<!-- Change code below this line -->
+<body class="bg-[#EF89B0] flex  justify-center items-center min-h-screen overflow-hidden text-[#1A1831]">
+    <section class="w-96 origin-top bg-white p-5 flex flex-col items-center rounded-3xl shadow-2xl">
+        <h2 class="text-2xl mb-10 " id="title">24 Birthdays today</h2>
+        <section class="mb-10 h-80 overflow-auto w-full" id="person-list">
+
+        </section>
+        <div class="w-40 h-10 text-lg text-white p-[2px] bg-gradient-to-r from-[#E76ED2] to-[#FF68A5] rounded-lg active:translate-y-1 transition-all duration-300">
+            <button class="w-full h-full relative  rounded-md overflow-hidden group bg-white transition-all duration-300 active:shadow-none ">
+                <span class="relative z-50 group-hover:text-white text-black transition-colors duration-300 ease-out" onclick="showall()">View All</span>
+                <div class="absolute z-10 left-0 top-0 w-0  h-10 transition-all ease-out duration-300 group-hover:w-full bg-gradient-to-r from-[#E76ED2] to-[#FF68A5]  "></div>
+            </button>
+
+        </div>
+    </section>
+</body>
+<script>
+  let limit = 4;
+data = [
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/3.png?raw=true',
+name:'Aaron Iakow',
+years:'23'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/2.png?raw=true',
+name:'Ivan Petrov',
+years:'26'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/1.png?raw=true',
+name:'Petr Ivanov',
+years:'29'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/1.png?raw=true',
+name:'Jone Jones',
+years:'28'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/4.png?raw=true',
+name:'Sara Chrysty',
+years:'23'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/2.png?raw=true',
+name:'Boba Fett',
+years:'26'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/1.png?raw=true',
+name:'Dada Mom',
+years:'33'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/2.png?raw=true',
+name:'Nora Son',
+years:'22'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/4.png?raw=true',
+name:'Aaron Iakow',
+years:'32'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/1.png?raw=true',
+name:'Soir Mor',
+years:'51'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/3.png?raw=true',
+name:'Anna Bo',
+years:'34'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/1.png?raw=true',
+name:'Boil Ko',
+years:'76'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/3.png?raw=true',
+name:'Konta Bont',
+years:'99'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/1.png?raw=true',
+name:'Os So',
+years:'33'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/1.png?raw=true',
+name:'Por Norw',
+years:'11'},
+    {url:'https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/4.png?raw=true',
+name:'Som Som',
+years:'26'},
+]
+
+const updateList = (startPosition) =>{
+    const section = document.getElementById('person-list');
+
+    for(let i=startPosition;i<limit;i++){
+        section.innerHTML+=`
+        <div class="w-full flex gap-x-1 mt-5 transition-all duration-300 item opacity-0 delay-300 ">
+            <img src="${data[i].url}" class="w-12 rounded-full"/>
+            <div>
+            <strong class="text-lg font-bold">${data[i].name}</strong>
+            <p class="text-sm text-gray-500">${data[i].years} years</p>    
+            </div>
+            </div>
+        `;
+    }
+    const items = document.querySelectorAll('.item');
+    console.log(items,items.length);
+    const timer = setInterval(()=>timerF(items,timer),150)
+}
+
+const init = () =>{
+    const title = document.getElementById('title');
+    title.innerText = String(data.length)+ " Birthdays today";
+    
+    // const timer2 = setInterval(()=>{console.log('tick')},150)
+    updateList(0);
+
+
+}
+
+let ind = 0;
+const timerF =  (items,timer)=>{
+    items[ind].classList.add("opacity-100");
+    console.log( items[ind]);
+    ind++;
+    console.log(ind,items.length);
+    if(ind === items.length) clearInterval(timer);
+
+
+}
+init();
+
+let isShownAll =false
+const showall = ()=>{
+    if(isShownAll) return;
+    isShownAll =true;
+    const oldLimit = limit;
+    limit = data.length;
+    updateList(oldLimit);
+    
+}
+
+</script>
+</html>
