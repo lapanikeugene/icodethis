@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sevillana&display=swap" rel="stylesheet">
+</head>
+
+<!-- Change code below this line -->
+<body class="bg-[#F6F8FC] flex  justify-center items-center min-h-screen overflow-hidden w-screen">
+    
+    <article class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  md:gap-x-9 gap-y-5" id="articles">
+     
+
+    </article>
+  
+</body>
+<style>
+  
+</style>
+<script>
+    const articles = [
+        {
+            id:1,
+            img:"https://images.unsplash.com/photo-1682695795557-17447f921f79?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            title:"Why is the Tesla Cybertruck designed the way it is?",
+            descr:"",
+            date:"01.12.2023",
+            
+        },
+        {
+            id:2,
+            img:"https://images.unsplash.com/photo-1703717101037-132d2c3fdd03?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            title:"Unveiling the Hidden Wonders of Everyday Routines",
+            descr:"Explore the magic within your daily rituals as we uncover",
+            date:"20.09.2023",
+            
+        },
+        {
+            id:3,
+            img:"https://images.unsplash.com/photo-1703504260184-bd5c5b3719c2?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            title:"The Surprising Science Behind Laughter's Healing Power",
+            descr:"Delve into the fascinating realm of laughter's therapeutic effects",
+            date:"01.09.2023",
+            
+        },
+    ]
+
+    const tags = [
+        {
+        name:"technology",
+        color:"bg-blue-900",
+        articleid:1},
+        {
+        name:"travel",
+        color:"bg-purple-900",
+        articleid:2},
+        {
+        name:"relationships",
+        color:"bg-red-600",
+        articleid:3},
+]
+
+    const authors = [
+        {
+        img:"https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/1.png?raw=true",
+        name:"Johan Burgsmann",
+        articleid:1},
+        {
+        img:"https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/2.png?raw=true",
+        name:"Johan Partko",
+        articleid:2},
+        {
+        img:"https://github.com/lapanikeugene/icodethis/blob/master/2023/02/19/src/assets/3.png?raw=true",
+        name:"Martin Schild",
+        articleid:3},
+]
+
+
+const articlesSection = document.getElementById('articles');
+
+for(const article of articles){
+
+    articlesSection.innerHTML+=`   <section class="flex flex-col justify-between bg-white rounded-xl shadow-lg overflow-hidden text-gray-800 cursor-pointer active:translate-y-1 hover:ring-4 ring-blue-300">
+            <header>
+                <img src="${article.img}"
+                class="w-72 h-44 object-cover"
+
+                
+            />
+            </header>
+            
+            <section class="p-4 max-w-72 flex-grow">
+                <div class="py-1 mr-auto w-32 ${tags.find(s=>s.articleid === article.id).color} text-white rounded-full text-xs text-center uppercase">${tags.find(s=>s.articleid === article.id).name}</div>
+                <h1 class="text-lg my-3 font-bold ">${article.title}</h1>
+                <p class="text-sm">${article.descr}</p>
+            </section>
+
+            <footer class="flex justify-between p-4 gap-x-2 items-center">
+                <img class="w-16 rounded-full border" src="${authors.find(s=>s.articleid === article.id).img}" />
+                <div class="flex-grow">
+                    <h3 class="font-bold">${authors.find(s=>s.articleid === article.id).name}</h3>
+                    <span class="text-xs text-gray-500">${article.date}</span>
+                </div>
+            </footer>
+
+        </section>`;
+}
+        
+ 
+</script>
+</html>
