@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<style>
+
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-[#EDEFF8] flex  justify-center items-center min-h-screen overflow-y-auto text-[#1A1831]">
+  <article class="max-w-lg w-full bg-white p-10 rounded-2xl ">
+     <header>
+        <h1 class="text-center text-2xl font-bold">A word from of customer</h1>
+        <p class="text-sm text-center">We are Helping Business with Cleaning Killer Hitman Service since 2001</p>
+     </header>
+     <section class="flex justify-center items-start mt-5">
+        <button class="p-2 flex justify-center items-center border rounded-full w-12 h-12 active:translate-y-1 hover:bg-gray-50 mt-6" onclick="moveLeft()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="22" width="16" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>
+        </button>
+        <div class="w-[300px] min-h-60 overflow-hidden pl-2">
+           <div  id="strip" class="duration-200  transition-all ease-in flex justify-start items-start gap-x-2">
+
+           </div>
+        </div>
+        <button  class="p-2 flex justify-center items-center border rounded-full w-12 h-12 active:translate-y-1 hover:bg-gray-50 mt-6" onclick="moveRight()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="22" width="16" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+        </button>
+
+     </section>
+     
+  </article>
+</body>
+<script>
+    let position = 0; 
+    data = [
+        {
+            name:"Petr P.",
+            position:"CEO VIP",
+            img:"https://images.unsplash.com/photo-1600486913747-55e5470d6f40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            quote:" Blah-blah-blah. I'm very happy with this service"    
+        },
+        {
+            name:"John W.",
+            position:"Dog Saver",
+            img:"https://plus.unsplash.com/premium_photo-1672857822411-ad82b8180078?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            quote:"Using it while I'm on vacation"    
+        },
+        {
+            name:"Jone Jones",
+            position:"Very Important Person",
+            img:"https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            quote:"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "    
+        },
+    ]
+
+    const strip = document.getElementById('strip');
+    const init = () =>{
+        strip.classList.add(`w-[${data.length*300}px]`);
+        for(const item of data){
+            strip.innerHTML+= `
+            <div class=" w-[290px]">
+                <div class="bg-[#111124] text-white text-xs leading-3 p-5 relative rounded-md shadow-[0_3px_5px_3px_rgba(0,0,0,0.2)] h-24">
+                ${item.quote} 
+                <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-t-8 border-t-[#111124] border-l-8 border-l-transparent border-r-8 border-r-transparent"></div>
+            </div>
+            <div>
+                <img src="${item.img} " alt="portrait" class="w-24 h-24 rounded-full outline outline-2 object-cover mx-auto mt-6 outline-offset-2 outline-gray-100 ">
+            </div>
+            <h2 class="text-center font-bold text-sm">${item.name}</h2>
+            <h4 class="text-center text-xs text-gray-500">${item.position}</h4>  
+            
+            </div>
+            `;
+        }
+    }
+
+init();
+
+const moveStrip = ()=>{
+    strip.style.transform = `translate(-${position * 300}px,0)`;
+}
+
+
+const moveLeft = () =>{
+    position--;
+
+    if(position <0) position = data.length-1;
+    moveStrip();
+    
+}
+
+const moveRight = () =>{
+    position++;
+
+    if(position >=data.length) position = 0;
+    moveStrip();
+   
+    
+}
+
+</script>
+</html>
