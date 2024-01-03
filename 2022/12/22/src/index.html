@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+</head>
+<style>
+    h1{
+        font-family: 'Rubik Doodle Shadow', serif;
+    }
+
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+
+    
+</style>
+<!-- Change code below this line -->
+<body class="bg-[#EEF0F2] flex  justify-center items-center min-h-screen overflow-hidden text-[#1A1831]">
+    <div id="particles-js"></div>
+
+    <article class="w-full max-w-xl min-w-lg shadow-xl rounded-xl bg-white relative p-10 ">
+        <div class="flex justify-center items-center w-full mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" height="56" width="54" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M210.6 5.9L62 169.4c-3.9 4.2-6 9.8-6 15.5C56 197.7 66.3 208 79.1 208H104L30.6 281.4c-4.2 4.2-6.6 10-6.6 16C24 309.9 34.1 320 46.6 320H80L5.4 409.5C1.9 413.7 0 419 0 424.5c0 13 10.5 23.5 23.5 23.5H192v32c0 17.7 14.3 32 32 32s32-14.3 32-32V448H424.5c13 0 23.5-10.5 23.5-23.5c0-5.5-1.9-10.8-5.4-15L368 320h33.4c12.5 0 22.6-10.1 22.6-22.6c0-6-2.4-11.8-6.6-16L344 208h24.9c12.7 0 23.1-10.3 23.1-23.1c0-5.7-2.1-11.3-6-15.5L237.4 5.9C234 2.1 229.1 0 224 0s-10 2.1-13.4 5.9z"/></svg>
+        </div>
+        <h1 class="text-center font-medium text-5xl">Merry Christmas</h1>
+        <p class="mt-10 text-center">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
+        <p class="mt-10 text-center text-yellow-600"> 50% of something off. Go buy a pizza to yourself and move back to 20 hours shift. Time! Time! Time!</p>
+        <div class="w-full text-center mt-5">
+            <button class="uppercase px-5 py-2 border rounded-lg hover:bg-slate-900 hover:text-white active:translate-y-1">get your gift</button>
+        </div>
+    </article>
+</body>
+<script>
+  particlesJS("particles-js", {
+  particles: {
+    number: {
+      value: 200, // Number of particles
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    },
+    color: {
+      value: "#ffffff" // Color of the particles
+    },
+    opacity: {
+      value: 0.7,
+      random: false
+    },
+    size: {
+      value: 4, // Size of the particles
+      random: true
+    },
+    line_linked: {
+      enable: false
+    },
+    move: {
+      enable: true,
+      speed: 1, // Speed of the particle movement
+      direction: "bottom", // Particles move downwards
+      random: false,
+      straight: false,
+      out_mode: "out", // Particles move out of the canvas
+      bounce: false
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: {
+        enable: true,
+        mode: "repulse"
+      },
+      onclick: {
+        enable: true,
+        mode: "push"
+      },
+      resize: true
+    }
+  },
+  retina_detect: true
+});
+
+
+</script>
+</html>
