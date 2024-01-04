@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+header { 
+    font-family: 'Montserrat', sans-serif;
+
+}
+#pie  {
+    background: conic-gradient(#B869CA 241deg, #F03E74 241deg 261deg, #E67000  261deg 277deg, #FED73F 277deg);
+    border-radius: 50%;
+
+}
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-[#111841] flex  justify-center items-center min-h-screen overflow-y-auto text-[#1A1831]">
+ <article class="max-w-lg w-screen  md:w-full shadow-md bg-[#192059] text-white overflow-x-auto">
+    <header class="bg-[#141D4C] uppercase text-center  text-2xl py-5">visitors per day</header>
+    <section class="grid grid-cols-5">
+        <div class="col-span-3 min-w-64 ">
+            <div class="w-64 h-64 relative m-2 flex justify-center items-center ">
+                <div id="pie" class="w-52 h-52 shadow-lg rounded-full"></div>
+                <div class="shadow-inner w-40 h-40 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#192059] rounded-full flex flex-col justify-center items-center">
+                   <h2 class="font-bold text-5xl">36k</h2>
+                    <span class="capitalize text-sm">Visitors Total</span>
+                </div>
+            </div>
+       
+        </div>
+        <div class="col-span-2 flex justify-center flex-col items-center gap-y-6 min-w-32">
+            <h3 class="w-full flex justify-start items-center gap-x-2"><span class="px-2 rounded-full bg-[#B869CA]">25%</span> <span class="text-xs ">Donuts</span></h3>
+            <h3 class="w-full flex justify-start items-center gap-x-2"><span class="px-2 rounded-full bg-[#F03E74]">25%</span> <span class="text-xs ">Pizzas</span></h3>
+            <h3 class="w-full flex justify-start items-center gap-x-2"><span class="px-2 rounded-full bg-[#E67000]">25%</span> <span class="text-xs ">Coffees</span></h3>
+            <h3 class="w-full flex justify-start items-center gap-x-2"><span class="px-2 rounded-full bg-[#FED73F] text-red-400">25%</span> <span class="text-xs ">Juices</span></h3>
+        </div>
+    </section>
+  </article>
+</body>
+<script>
+   
+</script>
+</html>
