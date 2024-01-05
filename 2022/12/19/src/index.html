@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-br from-[#90C6F4] to-[#6F6EF7] flex  justify-center items-center min-h-screen overflow-hidden text-slate-800">
+    <article class="w-full max-w-3xl min-w-[400px] bg-white rounded-2xl p-10  shadow-[-25px_-25px_0px_0px_rgba(255,255,255,0.3)]">
+      <h1 class="text-start text-4xl font-medium mb-5">Expenses</h1>
+      <nav class="flex justify-between items-center">
+        <nav class="bg-gray-300 rounded-full p-[3px] flex justify-between items-center gap-x-5">
+            <button class="bg-gradient-to-r from-[#90C6F4] to-[#6F6EF7] px-5 py-3 rounded-full text-white">Weekly</button>
+            <button  class="mx-5">Monthly</button>
+            <button class="mx-5">Early</button>
+        </nav>
+        <button>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="22" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg>
+        </button>
+      </nav>
+      <canvas id="myChart"></canvas>
+      <div class="flex justify-center items-center gap-x-1 [&>span]:text-sm">
+        <div class="w-3 h-3 rounded-full bg-[#7473F7] "></div><span>Income</span>
+        <div class="ml-3 w-3 h-3 rounded-full bg-[#F27BB9]"></div><span>Expenses</span>
+      </div>
+    </article>
+</body>
+<script>
+    const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        datasets: [ {
+            label: 'Incomes',
+            data: [150, 210, 60, 70, 45, 80, 120], // Replace these numbers with your incomes data
+            backgroundColor: 'rgb(111, 118, 246)', // Light blue
+            borderColor: 'rgb(111, 118, 246)',
+            borderWidth: 0.2,
+            barThickness: 20,
+            borderRadius:10
+         
+        }, {
+            // Invisible dataset to create space
+            label: 'Spacer',
+            data: [0, 0, 0, 0, 0, 0, 0], // Data points set to zero
+            backgroundColor: 'transparent',
+            borderColor: 'transparent',
+            borderWidth: 0.1,
+            barThickness: 1,
+            barPercentage: 0.1,
+            categoryPercentage: 0.1,
+            borderRadius:10
+
+        },
+        {
+            label: 'Expenses',
+            data: [120, 190, 30, 50, 20, 30, 40], // Replace these numbers with your expenses data
+            backgroundColor: 'rgb(240, 118, 177)', // Light red
+            borderColor: 'rgb(240, 118, 177)',
+            borderWidth: 0.2,
+            barThickness: 10,
+            borderRadius:5
+            
+        },]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        plugins: {
+            legend: {
+                display: false,
+                labels: {
+                    position: 'bottom'
+                }
+            }
+        }
+    }
+  
+});
+
+</script>
+</html>
