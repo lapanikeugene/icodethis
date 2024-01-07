@@ -1,0 +1,174 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+header { 
+    font-family: 'Montserrat', sans-serif;
+
+}
+#pie  {
+    background: conic-gradient(#B869CA 241deg, #F03E74 241deg 261deg, #E67000  261deg 277deg, #FED73F 277deg);
+    border-radius: 50%;
+
+}
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-[#111841] flex  justify-center items-center min-h-screen overflow-y-auto text-[#1A1831]">
+ <article class="max-w-4xl w-screen  md:w-full bg-[#D6EBE8] text-slate-900 overflow-x-auto grid lg:grid-cols-3 grid-cols-1 p-10 gap-y-2 gap-x-6 rounded-lg shadow-lg">
+    <div class="lg:col-span-2">
+        <h1 class="font-bold text-lg">Study with us</h1>
+    </div>
+    <div class="row-span-4 bg-[#DDEBE7] border border-white p-3 flex flex-col items-start justify-start relative overflow-hidden">
+      <!-- Email Form -->
+        <div class="absolute -right-[1000px] top-0 w-full h-full transition-all duration-200 bg-[#DDEBE7] p-4 z-50 flex justify-center items-center flex-col gap-y-5" id="email">
+            <button class="h-5 w-5 bg-red-500 absolute top-2 right-2 rounded-md flex justify-center items-center " onclick="hideEmailForm()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
+            </button>
+            <label class="font-bold ">
+                Email:
+                <input type="email" class="border p-2 rounded-md w-48" placeholder="email@home.com" />
+
+            </label>
+            <button class="w-full font-bold border rounded-lg px-2 py-5 h-10 border-[#FFA593] group relative overflow-hidden active:translate-y-1">
+              
+                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-bold z-20 group-hover:text-white">
+                    Apply
+                </div>
+                <div class="absolute w-1 group-hover:w-full top-0 left-0 h-10 from-[#FFA593] to-[#fcb4a6] z-10 transition-all duration-100 ease-linear bg-gradient-to-t"></div>
+               </button>
+        </div>
+
+
+        <h3 class="font-bold mb-5 text-lg">Why choose us?</h3>
+        <ul class="[&>li]:mb-3 flex-grow">
+            <li class="flex justify-start items-center gap-x-2 [&>svg]:fill-slate-900"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg> Sober mentors</li>
+            <li class="flex justify-start items-center gap-x-2 [&>svg]:fill-slate-900"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg> Pay to win scheme</li>
+            <li class="flex justify-start items-center gap-x-2 [&>svg]:fill-slate-900"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg> Test solves by chatGPT</li>
+            <li class="flex justify-start items-center gap-x-2 [&>svg]:fill-slate-900"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg> Discord for Introverts</li>
+            <li class="flex justify-start items-center gap-x-2 [&>svg]:fill-slate-900"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg> Just Click The Button!</li>
+           
+        </ul>
+
+        <footer class="w-full p-2">
+            <button class="w-full font-bold border rounded-lg px-2 py-5 h-20 border-[#FFA593] group relative overflow-hidden active:translate-y-1" onclick="showEmailForm()">
+              
+                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-bold z-20 group-hover:text-white">
+                    Apply Now
+                </div>
+                <div class="absolute w-1 group-hover:w-full top-0 left-0 h-20 from-[#FFA593] to-[#fcb4a6] z-10 transition-all duration-100 ease-linear bg-gradient-to-t"></div>
+               </button>
+        </footer>
+
+    </div>
+    <div>
+      <h1 class="text-5xl font-bold">90%</h1>
+     <span class="text-sm font-medium">
+        Graduates who are working not by acquired profession skills.
+     </span>
+    </div>
+    <div>
+        <h1 class="text-5xl font-bold">0%</h1>
+        <span class="text-sm font-medium">
+            Importance of your Portfolio by job hunting (You should be 5+ years of experience at least).
+        </span>
+        
+    </div>
+   
+    <div class="col-span-2">
+
+        <h1 class="font-bold text-lg">Enrollment</h1>
+    </div>
+    <div>
+        <form>
+            <ul class=" uppercase font-bold text-md -translate-x-2">
+                <li  ><label><input type="radio" value="1" name="Enrollment" class=" peer  hidden  " checked onclick="changeEn(0)" />
+                    <div class="peer-checked:bg-[#C3E0D8] rounded-full w-full text-start uppercase py-1 px-3 cursor-pointer hover:bg-[#eaf3ee]">
+                       Winter 2024
+                    </div>
+                </label></li>
+                <li class="  my-1" ><label><input type="radio" value="2" name="Enrollment" class=" peer  hidden "  onclick="changeEn(1)"    />
+                    <div class="peer-checked:bg-[#C3E0D8] rounded-full w-full text-start uppercase py-1 px-3 cursor-pointer hover:bg-[#eaf3ee]">
+                       Spring 2024
+                    </div>
+                </label></li>
+                <li  ><label><input type="radio" value="3" name="Enrollment" class=" peer  hidden  "   onclick="changeEn(2)"   />
+                    <div class="peer-checked:bg-[#C3E0D8] rounded-full w-full text-start uppercase py-1 px-3 cursor-pointer hover:bg-[#eaf3ee]">
+                       Summer 2024
+                    </div>
+                </label></li>
+         
+              
+            </ul>
+        </form>
+        
+    </div>
+        <div class="bg-[#C3E0D8] rounded-md p-5 [&>h3]:text-sm [&>h3]:mb-1 [&>div]:mb-3 [&>div]:font-bold [&>div]:text-lg [&>div]:origin-left [&>div]:transition-all [&>div]:duration-300  [&>div]:overflow-x-hidden">
+            <h3>Enrollment Deadline            </h3>
+            <div class="entrolment-data delay-0 scale-0 h-10">05 August</div>
+            <h3>Commincement            </h3>
+            <div class="entrolment-data delay-150  scale-0  h-10">03 October</div>
+            <h3>Completion Date            </h3>
+            <div class="entrolment-data delay-300  scale-0  h-10">12 September</div>
+
+        </div>
+  </article>
+</body>
+<script>
+    const data = [
+        {deadline:"05 August",commincement:"03 October",completion:"12 September"},
+        {deadline:"15 November",commincement:"01 July",completion:"22 June"},
+        {deadline:"11 December",commincement:"06 Juny",completion:"21 August"},
+    ]
+const enrData = document.querySelectorAll('.entrolment-data');
+const emailForm = document.getElementById('email');
+
+
+const showEmailForm = ()=>{
+    emailForm.classList.add('right-0');
+}
+const hideEmailForm = () =>{
+    emailForm.classList.remove('right-0');
+
+}
+const  removeScale = ()=>{
+    for(const item of enrData){
+        item.classList.remove('scale-100');
+        console.log('remove scale-100')
+    }
+}
+const addScale = (i)=>{
+    enrData[0].innerHTML = data[i].deadline;
+    enrData[1].innerHTML = data[i].commincement;
+    enrData[2].innerHTML = data[i].completion;
+    for(const item of enrData){
+        item.classList.add('scale-100');
+        
+        console.log('add scale-100')
+    }
+
+}
+const init=()=>{
+    addScale(0)
+}
+
+const changeEn = (i)=>{
+    removeScale();
+
+    setTimeout(()=>{
+        addScale(i);
+    },600);
+} 
+
+   setTimeout(init,300);
+</script>
+</html>
