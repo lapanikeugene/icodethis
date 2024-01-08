@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-[#c6d3a1] flex  justify-center items-center min-h-screen overflow-y-auto text-[#1A1831]">
+ <article class="max-w-sm w-screen  sm:w-full bg-white text-slate-900 overflow-x-auto  p-10 gap-y-2 gap-x-6 rounded-lg shadow-lg">
+    <section class="flex justify-center items-center relative m-5">
+        <div class="conic-gr w-40 h-40 bg-[#D9D9E9] rounded-full"></div>
+        <div class="absolute  w-36 h-36 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full shadow-md flex justify-center items-center flex-col">
+            <h1 class="font-bold text-5xl" id="percents-show">0%</h1>
+            <span class="text-center text-xs">content<br/> progress</span>
+        </div>
+    </section>
+    <nav class="flex flex-col gap-y-3">
+        <label class=" cursor-pointer  peer ">
+            <input type="checkbox" class=" peer hidden " checked onclick="curTrigger(this,0)"/>
+            <div class="w-full min-h-5 border border-slate-300 peer-checked:[&>button]:bg-slate-800 peer-checked:border-slate-900  rounded-md peer-checked:shadow-md p-3 flex justify-start items-center gap-x-3" >
+                <button class="w-6 h-6  bg-white rounded-full border-4 border-slate-400 peer-checked:border-slate-800 flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="14" width="12" viewBox="0 0 448 512" class="fill-white"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                </button>
+                <div>
+                    <h3 class="font-bold">Chapter 1</h3>
+                    <span>Introduction</span>
+                </div>
+            </div>
+        </label>
+        <label class=" cursor-pointer  peer ">
+            <input type="checkbox" class=" peer hidden " onclick="curTrigger(this,1)" />
+            <div class="w-full min-h-5 border border-slate-300 peer-checked:[&>button]:bg-slate-800 peer-checked:border-slate-900  rounded-md peer-checked:shadow-md p-3 flex justify-start items-center gap-x-3" >
+                <button class="w-6 h-6  bg-white rounded-full border-4 border-slate-400 peer-checked:border-slate-800 flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="14" width="12" viewBox="0 0 448 512" class="fill-white"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                </button>
+                <div>
+                    <h3 class="font-bold">Chapter 2</h3>
+                    <span>VIP 111</span>
+                </div>
+            </div>
+        </label>
+        <label class=" cursor-pointer  peer ">
+            <input type="checkbox" class=" peer hidden " onclick="curTrigger(this,2)" />
+            <div class="w-full min-h-5 border border-slate-300 peer-checked:[&>button]:bg-slate-800 peer-checked:border-slate-900  rounded-md peer-checked:shadow-md p-3 flex justify-start items-center gap-x-3" >
+                <button class="w-6 h-6  bg-white rounded-full border-4 border-slate-400 peer-checked:border-slate-800 flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="14" width="12" viewBox="0 0 448 512" class="fill-white"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                </button>
+                <div>
+                    <h3 class="font-bold">Chapter 3</h3>
+                    <span>Computers 101</span>
+                </div>
+            </div>
+        </label>
+    </nav>
+  </article>
+</body>
+<script>
+    const displayPercents = document.getElementById('percents-show');
+    const gradientElement = document.querySelector('.conic-gr');
+
+  const data = [
+    25,35,40
+  ]
+  let total  = data[0]; 
+
+  function animateDisplayPercent(targetTotal) {
+    let currentDisplay = parseInt(displayPercents.innerHTML) || 0;
+    const step = targetTotal > currentDisplay ? 1 : -1;
+
+    const interval = setInterval(() => {
+        currentDisplay += step;
+        displayPercents.innerHTML = (currentDisplay !== 0 ? String(currentDisplay).padStart(2, '0') : currentDisplay) + "%";
+        updateGradient(currentDisplay)
+        if (currentDisplay === targetTotal) {
+            clearInterval(interval);
+        }
+    }, 15);
+}
+
+  const curTrigger = (e,i)=>{
+    // console.log("trigger!",e.checked)
+    if(e.checked) total +=data[i]
+    else total -=data[i]
+    if(total  < 0) total  = 0;
+    // displayPercents.innerHTML =( total != 0 ? String(total).padStart(2,'0') : total )+ "%"
+    animateDisplayPercent(total)
+    
+  }
+
+  function updateGradient(value) {
+    const gradient = `conic-gradient(from 0deg, #2D2862 ${value}%, #D9D9E9 ${value}%)`;
+    gradientElement.style.backgroundImage = gradient;
+}
+
+init = () =>{
+    animateDisplayPercent(total);
+}
+
+init();
+</script>
+</html>
