@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+    @property --myColor1 {
+  syntax: '<color>';
+  initial-value: #3D8DCE;
+  inherits: false;
+}
+
+@property --myColor2 {
+  syntax: '<color>';
+  initial-value: #8DE0EB;
+  inherits: false;
+}
+
+#bar {
+  
+  background: linear-gradient(to right, var(--myColor1), var(--myColor2));
+  transition: --myColor1 2s, --myColor2 1s;
+}
+
+#bar:hover {
+  --myColor1: #be380f;
+  --myColor2: #369de2;
+}
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] flex  justify-center items-center min-h-screen overflow-y-auto text-[#1A1831]">
+   
+ <article class="max-w-sm w-screen  sm:w-full text-slate-900 overflow-x-auto  p-10 rounded-lg ">
+    <section class="origin-top w-full overflow-hidden transition-all duration-300 ease-linear" id="bar-wrapper">
+        <section class=" group w-full rounded-md bg-gradient-to-r from-[#3D8DCE] to-[#8DE0EB] relative shadow-md overflow-hidden p-3 gap-x-3  flex justify-start items-center"  id="bar">
+        <button class="absolute top-2 right-2 fill-white active:translate-y-1 z-20" onclick="hideBar()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10"  viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
+
+            </button>
+        <div class="rounded-lg w-10 h-10 rotate-12 absolute -top-2 -right-5 bg-blue-300/50 z-10">
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" class="fill-white/50 group-hover:fill-white" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+        <p class="[&>a]:font-bold text-sm text-white flex-grow ">
+            Our new <a href="#" target="_blank" class="hover:underline hover:text-blue-200" >Term und services</a> and <a href="#" target="_blank" class="hover:underline hover:text-blue-200"> Privacy Statement </a> are in effect.
+        </p>
+    </section>
+    </section>
+
+    <section class="rounded-sm w-full bg-white p-5 shadow-lg   mt-4">
+        <header class="w-full flex justify-between items-center">
+            <h1 class="text-xl capitalize">Documents</h1>
+            <button class="relative group active:translate-y-1 overflow-hidden border border-blue-400 px-4 py-2   rounded-full">
+                <div class="z-10 absolute transition-all duration-200 w-1 h-1 left-1/2 top-1/2 opacity-0 origin-center  group-hover:opacity-100 group-hover:scale-[40] rounded-full bg-blue-400">
+                </div>
+                <div class="w-full relative  fill-blue-400 text-blue-400  flex justify-center items-center text-sm gap-x-2 capitalize z-20 group-hover:text-white group-hover:fill-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+                Add New
+                </div>
+                
+                </button>
+        </header>
+        <nav class=" border rounded-md my-5 relative group">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" class="group-hover:fill-blue-400 fill-gray-400 -translate-y-1/2 absolute top-1/2 left-3" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+            <input placeholder="find me..." class="pl-10 py-2 w-full" />
+       
+            </nav>
+            <section>
+        <div class="w-full flex justify-between items-center gap-x-3 mt-3 hover:bg-gray-50 hover:ring-[1px] p-1 rounded-md cursor-pointer active:translate-y-1">
+            <div>
+                <div  class="w-10 h-10 rounded-full bg-blue-100 border border-blue-200 flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" class="fill-blue-400" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M48 448V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm55 241.1c-3.8-12.7-17.2-19.9-29.9-16.1s-19.9 17.2-16.1 29.9l48 160c3 10.2 12.4 17.1 23 17.1s19.9-7 23-17.1l25-83.4 25 83.4c3 10.2 12.4 17.1 23 17.1s19.9-7 23-17.1l48-160c3.8-12.7-3.4-26.1-16.1-29.9s-26.1 3.4-29.9 16.1l-25 83.4-25-83.4c-3-10.2-12.4-17.1-23-17.1s-19.9 7-23 17.1l-25 83.4-25-83.4z"/></svg>
+                </div>
+            </div>
+            <h3 class="flex-grow text-base font-medium">Scrumbs/Landing Page Copy</h3>
+        </div>
+        <div class="w-full flex justify-between items-center gap-x-3 mt-3 hover:bg-gray-50 hover:ring-[1px] p-1 rounded-md cursor-pointer active:translate-y-1">
+            <div>
+                <div  class="w-10 h-10 rounded-full bg-yellow-100 border border-yellow-200 flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" class="fill-yellow-400 mr-1" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M16.1 260.2c-22.6 12.9-20.5 47.3 3.6 57.3L160 376V479.3c0 18.1 14.6 32.7 32.7 32.7c9.7 0 18.9-4.3 25.1-11.8l62-74.3 123.9 51.6c18.9 7.9 40.8-4.5 43.9-24.7l64-416c1.9-12.1-3.4-24.3-13.5-31.2s-23.3-7.5-34-1.4l-448 256zm52.1 25.5L409.7 90.6 190.1 336l1.2 1L68.2 285.7zM403.3 425.4L236.7 355.9 450.8 116.6 403.3 425.4z"/></svg> 
+                    </div>
+            </div>
+            <h3 class="flex-grow text-base font-medium">Scrumbs/ Feature Brief</h3>
+        </div>
+        <div class="w-full flex justify-between items-center gap-x-3 mt-3 hover:bg-gray-50 hover:ring-[1px] p-1 rounded-md cursor-pointer active:translate-y-1">
+            <div>
+                <div  class="w-10 h-10 rounded-full bg-orange-100 border border-orange-200 flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg"  class="fill-orange-400"  height="20" width="20" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 48c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16h80V400c0-26.5 21.5-48 48-48s48 21.5 48 48v64h80c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H64zM0 64C0 28.7 28.7 0 64 0H320c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm88 40c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16H104c-8.8 0-16-7.2-16-16V104zM232 88h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16H232c-8.8 0-16-7.2-16-16V104c0-8.8 7.2-16 16-16zM88 232c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16H104c-8.8 0-16-7.2-16-16V232zm144-16h48c8.8 0 16 7.2 16 16v48c0 8.8-7.2 16-16 16H232c-8.8 0-16-7.2-16-16V232c0-8.8 7.2-16 16-16z"/></svg>                </div>
+            </div>
+            <h3 class="flex-grow text-base font-medium">Scrumbs/Landing Page Copy</h3>
+        </div>
+    </section>
+    </section>
+    
+  </article>
+</body>
+<script>
+    const bar = document.getElementById('bar-wrapper');
+   const hideBar = ()=>{
+    bar.classList.add('scale-0');
+   }
+</script>
+</html>
