@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+ 
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] flex flex-col justify-center items-center min-h-screen overflow-y-auto text-[#1A1831] ">
+   <h1 class="text-3xl text-purple-700 font-bold">You account is closed</h1>
+   <p>Give us advice, how to improve our service</p>
+ <article class="mt-5 max-w-3xl w-screen  sm:w-full  text-slate-900 overflow-x-auto  p-10 rounded-lg  relative overflow-hidden bg-white shadow-[0_0_60px_-15px_rgba(0,0,0,0.3)]">
+  <p>How likely is that you would recommend us to your friends or colleagues  </p>
+  <div class="grid grid-cols-10 max-w-96 gap-3 my-3" id="marks"></div>
+  <p>How can we improve?  </p>
+  <textarea class="w-full border p-1" rows="5"></textarea>
+
+  <footer class="text-center mt-10">
+    <button class="text-orange-500 active:translate-y-1">SUBMIT</button>
+  </footer>
+  </article>
+</body>
+<script>
+    const marks = document.getElementById('marks');
+
+    const init = ()=>{
+        for(let i=1;i<=10;i++){
+            marks.innerHTML+=`
+            <label class="cursor-pointer">
+        <input type="radio" class="hidden peer" value="${i}" name="evaluation">
+        <div class="mark  bg-gray-100 flex justify-center items-center peer-checked:bg-orange-500  peer-checked:text-white rounded-md text-lg text-gray-700 p-1 hover:shadow-md">
+            ${i}
+        </div>
+       
+    </label>
+            `
+        }
+
+
+
+    }
+ 
+ init();
+ 
+
+</script>
+</html>
