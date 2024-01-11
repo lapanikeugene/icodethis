@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+ 
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] flex flex-col gap-10 justify-center items-center min-h-screen overflow-y-auto text-[#1A1831] ">
+   
+ <article class="max-w-3xl w-screen  sm:w-full text-slate-900 overflow-x-auto  p-10 rounded-lg  relative overflow-hidden bg-white shadow-lg">
+    <header class="my-5 text-gray-400 text-center ">
+        <h1 class="text-2xl font-bold">Percantage Calculator</h1>
+        <p>Calculate percentage for free</p>
+    </header>
+
+ <hr/>
+
+ <section class="my-10 [&>input]:border-b-2 [&>input]:ml-3 [&>input]:border-gray-500 [&>input]:w-24 flex justify-center text-xl text-gray-600">
+    <span id="whatIs">What is </span>
+    <input id="amount" />
+    <span>% of </span>
+    <input id="num" />
+    <span id="answer">?</span>
+ </section>
+<nav class="text-center mb-10">
+    <button class="px-10 py-3 bg-[#89BE43] shadow-sm text-white active:translate-y-1 hover:bg-[#a8e05e] rounded-md" onclick="calculate()">Calculate</button>
+</nav>
+<hr/>
+<footer class="text-center  mt-5">
+    <span>Check out similiar <a href="#" target="_blank" class="text-sky-400">percentage calculators</a></span>
+</footer>
+<script>
+ const answerDisplay = document.getElementById('answer');
+ const whatIs = document.getElementById('whatIs');
+ const am = document.getElementById('amount');
+ const numb = document.getElementById('num');
+
+ const percentOfNumber = (num, amount)=>{
+  return num*amount/100;
+}
+
+const calculate=()=>{
+    whatIs.innerHTML = "";
+  const result =   percentOfNumber(Number(numb.value),Number(am.value));
+  console.log(numb.value,am.value);
+  answerDisplay.innerHTML = "is "+ result;
+}
+
+</script>
+</html>
