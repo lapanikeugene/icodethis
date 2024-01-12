@@ -1,0 +1,154 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+ .cg {
+    background: conic-gradient(#86bd3f 280deg, rgb(186, 196, 206) 280deg);
+
+  border: 1px solid #50613a;
+}
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f]">
+   <div class="w-64 h-screen sticky top-0 left-1/2 -translate-x-1/2 bg-[#6f9c33]"></div>
+   <main class="min-w-[800px] absolute  h-full left-1/2 -translate-x-1/2 top-0 flex flex-col gap-10 justify-center items-center min-h-screen text-[#1A1831] ">
+  
+    <section id="section1"  class="hover:z-[999] hover:scale-110 shadow-[0_0_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-200 ease-linear max-w-xl h-72 text-slate-900  p-10 rounded-lg  relative  bg-white" id="section1">
+        <h1 class="font-bold text-2xl relative z-10">Select tier</h1>
+        <!--  gray BG that will be moved by click on option -->
+        <div class="transition-transform duration-100 opacity-0 absolute w-5/6 h-16 rounded-md top-0  bg-gray-200  z-0" id="mBar"></div>
+
+        <label class="w-full p-5 grid grid-cols-2 gap-5 cursor-pointer  hover:drop-shadow-md relative z-10 has-[:checked]:cursor-default active:translate-y-1"  onclick="moveTo(0)">
+            <input type="radio" name="variant" value="0" class="hidden peer"/>
+            <div>
+                <h3 class="font-bold">$5/Month</h3>
+                <p>A significant Contribution</p>
+            </div>
+            <div class="  peer-checked:[&_.but]:to-[#c6d3a1] peer-checked:[&_.but]:bg-gradient-to-br peer-checked:[&_.but]:text-slate-800 peer-checked:[&_.but]:peer-checked:from-[#86bd3f] ">
+                <div class=" w-full py-3 rounded-lg    border border-[#86bd3f] but flex justify-center items-center font-bold">Select</div>
+            </div>
+        </label>
+        <label class="w-full p-5 grid grid-cols-2 gap-5 cursor-pointer  hover:drop-shadow-md relative z-10 has-[:checked]:cursor-default active:translate-y-1"  onclick="moveTo(1)">
+            <input type="radio" name="variant" value="1" class="hidden peer" />
+            <div>
+                <h3 class="font-bold">$30/Month</h3>
+                <p>huge Contribution</p>
+            </div>
+            <div class="  peer-checked:[&_.but]:to-[#c6d3a1] peer-checked:[&_.but]:bg-gradient-to-br peer-checked:[&_.but]:text-slate-800 peer-checked:[&_.but]:peer-checked:from-[#86bd3f] ">
+                <div class=" w-full py-3 rounded-lg    border border-[#86bd3f] but flex justify-center items-center font-bold">Select</div>
+            </div>
+        </label>
+    </section>
+    <section class=" hover:scale-110 hover:z-[999] bg-white absolute shadow-[0_0_60px_-15px_rgba(0,0,0,0.3)]  w-64 h-[300px] overflow-hidden left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 transition-all duration-300 p-4 flex flex-col items-center justify-center" id="section2">
+        <div class="relative w-40">
+            <div class="w-40 h-40 cg rounded-full"></div>
+            <div class="bg-white w-36 h-36 rounded-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
+                <img width="96" height="96" src="https://img.icons8.com/doodle/96/tree--v1.png" alt="tree--v1"/>
+            </div>
+        </div>
+        <div class="text-xs my-1"><a  href="https://icons8.com/icon/80577/baum">Baum</a> icon by <a href="https://icons8.com">Icons8</a></div>
+        <h1 class="my-3 capitalize font-bold text-xl">nature</h1>
+        <button class="font-bold py-3 w-full hover:to-[#c6d3a1] hover:bg-gradient-to-br hover:text-slate-800 hover:from-[#86bd3f] hover:shadow-lg active:translate-y-1 rounded-lg  border border-[#86bd3f]">
+            Continue
+        </button>
+    </section>
+
+
+    <section class="rounded-md hover:scale-110 hover:z-[999]  bg-white absolute shadow-[0_0_60px_-15px_rgba(0,0,0,0.3)] w-[600px] h-[500px] overflow-hidden left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 transition-all duration-300  flex flex-col items-center justify-between" id="section3">
+        <section class="m-5">
+            <div class="relative mb-5 pt-1">
+                <div class="mb-4 flex h-2 overflow-hidden rounded bg-gray-100 text-xs">
+                  <div style="width: 80%" class="bg-[#86bd3f]"></div>
+                </div>
+                <div class="mb-2 flex items-center justify-between text-xs">
+                  <div class="text-gray-600">Progress</div>
+                  <div class="text-gray-600">100%</div>
+                </div>
+              </div>
+            <h1 class="my-3 capitalize font-bold text-lg">Which of this is 'Eat your pasta?'</h1>
+            <label class="w-full flex justify-start items-center gap-3 cursor-pointer my-2">
+                <input type="radio" class="hidden peer" name="quiz" value="0" onclick="readText('パスタを食べてください')"/>
+                <div class="w-6 h-6 rounded-full border-2 border-green-800 flex justify-center items-center peer-checked:[&_.variant]:opacity-100 peer-checked:[&_.variant]:scale-100">
+                    <div class="w-3 h-3 scale-0 opacity-0 bg-green-800 transition-all duration-200 rounded-full variant" ></div>
+                </div>
+                <div class="peer-checked:text-green-800">パスタを食べてください</div>
+            </label>
+            <label class="w-full flex justify-start items-center gap-3 cursor-pointer my-2" onclick="readText('あなたのパスタを飲みます')">
+                <input type="radio" class="hidden peer" name="quiz" value="1" />
+                <div class="w-6 h-6 rounded-full border-2 border-green-800 flex justify-center items-center peer-checked:[&_.variant]:opacity-100 peer-checked:[&_.variant]:scale-100">
+                    <div class="w-3 h-3 scale-0 opacity-0 bg-green-800 transition-all duration-200 rounded-full variant" ></div>
+                </div>
+                <div  class="peer-checked:text-green-800">あなたのパスタを飲みます</div>
+            </label>
+            <label class="w-full flex justify-start items-center gap-3 cursor-pointer my-2" onclick="readText('パスタを見て')">
+                <input type="radio" class="hidden peer" name="quiz" value="2" />
+                <div class="w-6 h-6 rounded-full border-2 border-green-800 flex justify-center items-center peer-checked:[&_.variant]:opacity-100 peer-checked:[&_.variant]:scale-100">
+                    <div class="w-3 h-3 scale-0 opacity-0 bg-green-800 transition-all duration-200 rounded-full variant" ></div>
+                </div>
+                <div class="peer-checked:text-green-800">パスタを見て</div>
+            </label>
+            <label class="w-full flex justify-start items-center gap-3 cursor-pointer my-2" onclick="readText('あなたのパスタを持っています')">
+                <input type="radio" class="hidden peer" name="quiz" value="3" />
+                <div class="w-6 h-6 rounded-full border-2 border-green-800 flex justify-center items-center peer-checked:[&_.variant]:opacity-100 peer-checked:[&_.variant]:scale-100">
+                    <div class="w-3 h-3 scale-0 opacity-0 bg-green-800 transition-all duration-200 rounded-full variant" ></div>
+                </div>
+                <div class="peer-checked:text-green-800">あなたのパスタを持っています</div>
+            </label>
+        </section>
+       <footer class="w-full">
+        
+            <button class="w-full bg-gray-50 py-2 text-gray-700 hover:text-gray-500 active:translate-y-1 hover:shadow-md">Skip this question</button>
+        
+        <button class="font-bold py-5 w-full to-[#c6d3a1] bg-gradient-to-r hover:text-slate-800 from-[#86bd3f] hover:shadow-lg active:translate-y-1 ">
+            Continue
+        </button>
+       </footer>
+       
+    </section>
+   </main>
+
+</body>
+<script>
+ 
+
+     const mBar = document.getElementById('mBar');
+     const section1 = document.getElementById('section1');
+     const section2 = document.getElementById('section2');
+     const section3 = document.getElementById('section3');
+     const moveTo = (i) =>{
+        mBar.style.transform = `translate(0,${i===0 ? 85 : 175}px)`;
+        mBar.style.opacity='100';
+     }
+
+     const init = ()=>{
+        section1.classList.add('-translate-x-[150px]');
+        section1.classList.add('-translate-y-20');
+        section2.classList.add('-translate-x-[200px]');
+        section2.classList.add('translate-y-5');
+        section3.classList.add('translate-x-[50px]');
+        section3.classList.add('-translate-y-[300px]');
+     }
+
+     setTimeout(init,300);
+
+     const msg = new SpeechSynthesisUtterance();
+     msg.lang = 'ja-JP';
+     const readText =(t)=>{
+      
+        if(window.speechSynthesis.speaking)
+        window.speechSynthesis.cancel();
+
+        msg.text = t;
+    window.speechSynthesis.speak(msg);
+     }
+    
+</script>
+</html>
