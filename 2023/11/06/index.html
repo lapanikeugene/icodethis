@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gray-800 flex justify-center items-center bg-cover bg-[url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] ">
+    
+        <video autoplay muted  id="myVideo" class="absolute top-0 left-0  h-screen w-screen object-cover transition-all duration-[900ms]">
+            <source src="https://eugenelapanik.com/production_id_4712005%20(1080p).mp4" type="video/mp4">
+          </video>
+       
+        <main class="relative w-full min-w-[600px]  max-w-4xl rounded-lg p-3 text-white">
+            <h1 class="text-start text-6xl">Travel to Japan</h1>
+            <p id="showDate" class="text-xl my-6"></p>
+            <article >
+                <section class="w-full grid grid-cols-4 gap-x-3 gap-y-1">
+                    <div id="days" class=" flex justify-center items-center text-6xl font-bold rounded-l-lg bg-white/40 px-4 py-10 shadow-[0_0_80px_35px_rgba(0,0,0,0.5)]">999</div>
+                    <div id="hours" class=" flex justify-center items-center text-6xl font-bold rounded-sm bg-white/40 px-4 py-10  shadow-[0_0_80px_35px_rgba(0,0,0,0.5)]">59</div>
+                    <div id="minutes" class=" flex justify-center items-center text-6xl font-bold rounded-sm bg-white/40 px-4 py-10  shadow-[0_0_80px_35px_rgba(0,0,0,0.5)]">59</div>
+                    <div id="seconds" class=" flex justify-center items-center text-6xl font-bold rounded-r-lg bg-white/40 px-4 py-10  shadow-[0_0_80px_35px_rgba(0,0,0,0.5)]">59</div>
+                    <div class="text-center font-bold text-xl">Days</div>
+                    <div class="text-center font-bold text-xl">Hours</div>
+                    <div class="text-center font-bold text-xl">Minutes</div>
+                    <div class="text-center font-bold text-xl">Seconds</div>
+
+                </section>
+                <p class="mt-10">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet </p>
+            </article>
+      
+        </main>
+        <footer class="text-xs absolute bottom-0 left-0 text-white">
+            <a href="https://www.pexels.com/video/drone-footage-of-city-during-dawn-4712005/" target="_blank">Video by Jose Carlos</a>
+        </footer>
+</body>
+<script>
+//Hide video after it will end 
+document.getElementById('myVideo').addEventListener('ended', function() {
+    this.classList.add('opacity-0'); // or 'opacity-0' to make it transparent
+  });
+
+
+
+
+//  Timer
+    const showDate = document.getElementById('showDate');
+    // add script that write months in words. 
+    const now1 = new Date();
+
+    showDate.innerHTML = '25 September of '+now1.getFullYear();
+
+     const getTimeRemaining = ()=>{
+        const now = new Date();
+
+  const christmas = new Date(now.getFullYear(), 8, 25); 
+  
+
+  const timeDiff = christmas - now;
+
+  // Calculate days, hours, minutes, and seconds
+  const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+  return {
+    days,
+    hours,
+    minutes,
+    seconds
+  };
+}
+
+const elDays = document.getElementById('days');
+  const elHours = document.getElementById('hours');
+  const elMinutes = document.getElementById('minutes');
+  const elSeconds = document.getElementById('seconds');
+const  updateCountdown = ()=> {
+    console.log('tick')
+  const { days, hours, minutes, seconds } = getTimeRemaining();
+
+  elDays.innerHTML = `${days < 10 ? '0'+days : days}`;
+  elHours.innerHTML = `${hours < 10 ? '0'+hours : hours}`;
+  elMinutes.innerHTML = `${minutes < 10 ? '0'+minutes : minutes}`;
+  elSeconds.innerHTML = `${seconds < 10 ? '0'+seconds : seconds}`;
+
+  console.log('tick',seconds)
+
+}
+
+setInterval(updateCountdown, 1000);
+
+    
+</script>
+</html>
