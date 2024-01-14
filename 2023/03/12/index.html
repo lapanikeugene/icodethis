@@ -1,0 +1,156 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+.before-shadow{
+    transform-style: preserve-3d;
+}
+.before-shadow::before {
+    transform: translateZ(-10px);
+    background-color: #86bd3f;
+    content: "";
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: -100;
+    left: -30px;
+    top: -30px;
+
+}
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] w-screen h-screen">
+   <main class="min-w-[800px] absolute  h-full left-1/2 -translate-x-1/2 top-0 flex flex-col gap-10 justify-center items-center min-h-screen text-[#1A1831] ">
+  
+    <section id="section1"  class="hover:z-[999] hover:scale-110 shadow-[0_0_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-200 ease-linear w-96 h-72 text-slate-900  p-10 rounded-lg  relative  bg-[#1B2042]" id="section1">
+      <h1 class="text-3xl font-bold my-3 text-slate-300">Building your page</h1>
+      <p class="text-start text-slate-300 text-sm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor. </p>
+      <section id="todo-indicator" class="grid grid-cols-7 w-full h-4 [&>div]:rounded-full  [&>div]:bg-slate-900 gap-2 mt-5 [&>div]:transtion-all [&>div]:duration-300">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+      <div id="remain-display" class="text-slate-300">1</div>
+    </section>
+    <section class="before-shadow rounded-md  hover:scale-110 hover:z-[999] bg-white absolute shadow-[0_0_60px_-15px_rgba(0,0,0,0.3)]  w-64   left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 transition-all duration-300 p-4 flex flex-col items-start justify-start" id="section2">
+      <h1 class="text-xl font-bold">Checklist</h1>
+        <section class="w-full " id="todolist">
+
+        </section>
+      
+        
+       
+
+    </div>
+    </section>
+
+   </main>
+
+</body>
+<script>
+    let completed = 0; 
+    const todolistDisplay = document.getElementById('todolist');
+    const todolistIndicator = document.getElementById('todo-indicator');
+    const remainDisplay = document.getElementById('remain-display');
+    const todoList =  [
+        'Industry','Website URL', 'Company size', 'Description', 'Logo', 'Location', 'Custom Button'
+    ];
+    const indicatorColors = ["#3D7EAA", "#559FD7", "#6DB0E2", "#82C1ED", "#99D2F8", "#B0E3FF", "#C7F4FF"]
+    remainDisplay.innerHTML =`remain ${todoList.length} tasks`
+
+
+    // for(const i in todoList){
+    //     todolistDisplay.innerHTML+=` <div class="h-12 w-full  cursor-pointer  flex justify-start items-center gap-x-2 "  >
+    //         <input type="checkbox" name="option" class="peer/item${i} "  id='todoitem-${i}' onclick="addToComplete(${i})"/>
+
+    //         <label for="1" class="w-full  h-full text-center   text-gray-400 select-none  cursor-pointer flex justify-start gap-x-2 items-center peer-checked/item${i}:[&_.radio]:bg-blue-500 peer-checked/item${i}:[&_.radio-text]:text-gray-900 peer-checked/item${i}:[&_.radio-text]:font-bold peer-checked/item${i}:[&_.radio-text]:line-through">
+    //         <div class="w-4 h-4 ring-blue-600 ring-2 ring-offset-2 rounded-full  radio"></div>
+    //         <div class="radio-text">
+    //             ${todoList[i]}
+    //         </div>
+    //     </label>
+    //     </div>`;
+
+    // }
+
+    for (const i in todoList) {
+    todolistDisplay.innerHTML += `
+        <div class="h-12 w-full cursor-pointer flex justify-start items-center gap-x-2">
+            <input type="checkbox" name="option" class="peer hidden" id="todoitem-${i}" onclick="addToComplete(${i})"/>
+
+            <label for="todoitem-${i}" class=" peer-checked:[&_.radio]:bg-blue-500 w-full h-full text-center text-gray-400 select-none cursor-pointer flex justify-start gap-x-2 items-center peer-checked:text-gray-900 peer-checked:font-bold peer-checked:line-through">
+                <div class="w-4 h-4 ring-blue-600 ring-2 ring-offset-2 rounded-full radio transition-all duration-100"></div>
+                <div>
+                    ${todoList[i]}
+                </div>
+            </label>
+        </div>`;
+}
+
+
+ const addToComplete = (i)=>{
+    // console.log(i);
+    const item = document.getElementById('todoitem-'+i);
+
+     
+    const isChecked = item.checked;
+    completed +=isChecked ? 1 : -1;
+    // console.log(completed)
+    todolistIndicator.innerHTML="";
+    for(let ind = 0; ind < todoList.length;ind++){
+        console.log(ind <completed )
+        todolistIndicator.innerHTML+=`<div style='background-color:${ind <completed ? indicatorColors[ind] : 'rgb(15,23,42)'  }'></div>`;
+    }
+
+    remainDisplay.innerHTML =`remain ${todoList.length-completed} tasks`
+ }
+
+
+
+
+//  Moving of divs
+
+     const mBar = document.getElementById('mBar');
+     const section1 = document.getElementById('section1');
+     const section2 = document.getElementById('section2');
+     const moveTo = (i) =>{
+        mBar.style.transform = `translate(0,${i===0 ? 85 : 175}px)`;
+        mBar.style.opacity='100';
+     }
+
+     const init = ()=>{
+        section1.classList.add('-translate-x-[150px]');
+        section1.classList.add('-translate-y-20');
+        section2.classList.add('translate-x-[140px]');
+        section2.classList.add('-translate-y-20');
+   
+     }
+
+     setTimeout(init,300);
+
+     const msg = new SpeechSynthesisUtterance();
+     msg.lang = 'ja-JP';
+     const readText =(t)=>{
+      
+        if(window.speechSynthesis.speaking)
+        window.speechSynthesis.cancel();
+
+        msg.text = t;
+    window.speechSynthesis.speak(msg);
+     }
+    
+</script>
+</html>
