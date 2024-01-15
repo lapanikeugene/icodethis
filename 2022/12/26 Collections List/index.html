@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] w-screen h-screen flex justify-center items-center">
+    
+    <main class=" w-full max-w-5xl rounded-lg bg-[#EEF0F2] shadow-lg p-14  relative origin-top  transition-all duration-300 text-slate-800" id="main-window">
+      <h1 class="text-3xl font-bold mb-5">Popular Collections</h1>
+      <nav class="flex gap-2 w-full [&>div]:bg-white [&>div]:py-2 [&>div]:px-1 [&>div]:rounded-sm  [&>div]:font-bold [&>div]:cursor-pointer text-sm">
+        <div class="hover:bg-blue-100">Profile</div>
+        <div class="hover:bg-blue-100">New York</div>
+        <div class="hover:bg-blue-100">Relaxing</div>
+        <div class="hover:bg-blue-100">Person</div>
+        <div class="hover:bg-blue-100">Fashion</div>
+      </nav>
+      <section class="w-full grid md:grid-cols-3 grid-cols-1 gap-5  mt-10" id="strip">
+        
+      </section>
+    </main>
+</body>
+<script>
+   const data = [
+    {
+        title:'History',
+        amount:133,
+        imgs:[
+            'https://images.unsplash.com/photo-1683009427051-00a2fe827a2c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://images.unsplash.com/photo-1604580864964-0462f5d5b1a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://images.unsplash.com/photo-1682686580003-22d3d65399a8?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://images.unsplash.com/photo-1583326949395-cea434cf2a91?q=80&w=1971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        ]
+    },
+    {
+        title:'Pizza',
+        amount:234,
+        imgs:[
+            'https://images.unsplash.com/photo-1594007654729-407eedc4be65?q=80&w=1928&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        ]
+    },
+    {
+        title:'Ice Cream',
+        amount:643,
+        imgs:[
+            'https://images.unsplash.com/photo-1560008581-09826d1de69e?q=80&w=1944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?q=80&w=2087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'https://images.unsplash.com/photo-1628815870980-f416105d89b3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        ]
+    },
+   ]
+    const strip = document.getElementById('strip');
+    const gallery = (imgs)=>{
+        let s = "";
+        for(let i=1; i<imgs.length;i++){
+            s+=`
+            <div class="overflow-hidden w-full h-20 mx-auto object-cover rounded-md">
+                        <img
+                            src="${imgs[i]}"
+                            class=" origin-center transition-all  duration-200 hover:scale-150  object-cover rounded-xl h-24"
+                        />
+                    </div>
+            `;
+        }
+
+        return s;
+    }
+    for(const item of data){
+        console.log(item.title)
+        strip.innerHTML+=`  <div class="rounded-lg p-3 bg-white " >
+                <section class="w-full grid grid-cols-3 my-3 gap-2" >
+        <div class="overflow-hidden w-full h-56 mx-auto  rounded-lg col-span-3">
+            <img
+            src="${item.imgs[0]}"
+            class=" origin-center transition-all  duration-200 hover:scale-150 object-cover rounded-xl h-56 w-full"
+            />
+        </div>
+        
+        ${gallery(item.imgs)}
+        
+        </section>
+                            <footer class="w-full flex justify-between items-center">
+                        <div class="font-bold text-lg">${item.title}</div>
+                        <div class="flex gap-2 justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM323.8 202.5c-4.5-6.6-11.9-10.5-19.8-10.5s-15.4 3.9-19.8 10.5l-87 127.6L170.7 297c-4.6-5.7-11.5-9-18.7-9s-14.2 3.3-18.7 9l-64 80c-5.8 7.2-6.9 17.1-2.9 25.4s12.4 13.6 21.6 13.6h96 32H424c8.9 0 17.1-4.9 21.2-12.8s3.6-17.4-1.4-24.7l-120-176zM112 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"/></svg>
+                            ${item.amount}
+                        </div>
+                    </footer>
+                     `;
+    }
+    
+
+
+  
+  
+               
+ 
+
+
+</script>
+</html>

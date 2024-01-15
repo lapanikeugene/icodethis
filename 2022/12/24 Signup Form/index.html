@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] w-screen h-screen flex justify-center items-center">
+    
+    <main class=" w-full max-w-lg rounded-lg bg-white shadow-lg p-10  relative origin-top  transition-all duration-300" id="main-window">
+        <button class="absolute top-5 right-5 active:translate-y-1" onclick="hideWindow()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" class="fill-gray-700" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
+        </button>
+        <section>
+            <h1 class="text-3xl font-bold text-center mb-5">Sign Up</h1>
+            <p class="text-lg">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
+            <nav class="my-12  w-full max-w-xs mx-auto flex flex-col gap-y-3">
+                <button class="mx-auto border py-2 px-2 w-full rounded-sm active:translate-y-1 flex justify-start items-center gap-x-2">
+                    <img width="30" height="30" src="https://img.icons8.com/papercut/60/google-logo.png" alt="google-logo"/>
+                    <span>Sign up with Google</span>
+                </button>
+                <button class="mx-auto border py-2 px-2 w-full rounded-sm active:translate-y-1 flex justify-start items-center gap-x-2">
+                    <img width="30" height="30" src="https://img.icons8.com/papercut/60/google-logo.png" alt="google-logo"/>
+                    <span>Sign up with Facebook</span>
+                </button>
+                <button class="mx-auto border py-2 px-2 w-full rounded-sm active:translate-y-1 flex justify-start items-center gap-x-2">
+                    <img width="30" height="30" src="https://img.icons8.com/papercut/60/google-logo.png" alt="google-logo"/>
+                    <span>Sign up with Github</span>
+                </button>
+            </nav>
+       
+        </section>
+
+        <div class="h-12 w-full  cursor-pointer  flex justify-start items-center gap-x-2 peer-checked:[&_.radio]:bg-blue-500 mb-5 ">
+         
+            <label for="1" class="w-full  h-full text-center   text-gray-400 select-none  cursor-pointer flex justify-start gap-x-2 items-center ">
+                <input type="checkbox" name="option" id="1" value="1" class="peer hidden"  />
+
+                <div class="w-4 h-4 peer-checked:ring-blue-600 ring-2 ring-offset-2 rounded-sm  radio peer-checked:bg-blue-500"></div>
+                <div class="radio-text peer-checked:text-gray-900">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr
+                </div>
+            </label>
+        </div>
+        
+        <nav class="text-center mb-5">
+            <button class="text-blue-400 active:translate-y-1 hover:bg-blue-100 px-2 py-2 rounded-sm">Sign In</button>
+        </nav>
+
+        <footer class="text-xs text-center">
+            <a  href="https://icons8.com/icon/JvOSspDsPpwP/google-logo">Google Logo</a> icon by <a href="https://icons8.com">Icons8</a>
+        </footer>
+    </main>
+</body>
+<script>
+  const mainWindow = document.getElementById('main-window');
+
+    const hideWindow = () =>{
+        mainWindow.classList.add('opacit-0');
+        mainWindow.classList.add('scale-y-0');
+    }
+</script>
+</html>
