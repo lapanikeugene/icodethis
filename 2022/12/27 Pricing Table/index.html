@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+#main-window::before {
+    transform: translateZ(-10px);
+    background-color: #EDBBFF;
+    content: "";
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: -100;
+    left: -100px;
+    bottom: -100px;
+
+}
+#main-window::after {
+    transform: translateZ(-10px);
+    background-color: #FFDDB7;
+    content: "";
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: -100;
+    right: -90px;
+    bottom: 10%;
+
+}
+#shadow-2::before {
+    transform: translateZ(-10px);
+    background-color: #AEF1F5;
+    content: "";
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: -100;
+    left: 40%;
+    top: -100px;
+
+}
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] w-screen h-screen flex justify-center items-center">
+    
+    <main class="before:blur-2xl after:blur-2xl grid grid-cols-1 gap-10 md:grid-cols-3 w-full max-w-3xl rounded-lg bg-[#EEF0F2]/60 border-[16px] border-white shadow-lg p-10  relative origin-top  transition-all duration-300 text-slate-800 overflow-hidden" id="main-window">
+        <div class="absolute w-full h-full before:blur-2xl " id="shadow-2"></div>
+
+        <section>
+            <h3 class="my-2 text-lg font-medium">Free</h3>
+            <div class="flex justify-start items-end w-full">
+                <h1 class="text-3xl  font-bold">$</h1><h1 class="text-5xl font-bold">33</h1>
+            </div>
+            <p class="text-sm">Free for whole team</p>
+            <p class=" my-10 ">For individuals or teams looking to organize anything.            </p>
+            <nav>
+                <button class="relative w-full group active:translate-y-1 overflow-hidden border border-slate-800 hover:border-[#EDBBFF] px-4 py-2   rounded-full hover:shadow-lg shadow-sm">
+                    <div class="z-10 absolute transition-all duration-200 w-1 h-1 left-1/2 top-1/2 opacity-0 origin-center  group-hover:opacity-100 group-hover:scale-[60] rounded-full bg-[#EDBBFF]">
+                    </div>
+                    <div class="w-full relative  fill-[#EDBBFF] text-slate-800  flex justify-center items-center text-sm gap-x-2 capitalize z-20 group-hover:text-white group-hover:fill-white">
+                        Get Started
+                    </div>
+                    
+                </button>
+            </nav>
+        </section>
+        <section>
+            <h3 class="my-2 text-lg font-medium">Free</h3>
+            <div class="flex justify-start items-end w-full">
+                <h1 class="text-3xl  font-bold">$</h1><h1 class="text-5xl font-bold">33</h1>
+            </div>
+            <p class="text-sm">Free for whole team</p>
+            <p class=" my-10 ">For individuals or teams looking to organize anything.            </p>
+            <nav>
+                <button class="relative w-full group active:translate-y-1 overflow-hidden border border-[#75a1a3] hover:border-[#AEF1F5] px-4 py-2   rounded-full hover:shadow-lg shadow-sm">
+                    <div class="z-10 absolute transition-all duration-200 w-1 h-1 left-1/2 top-1/2 opacity-0 origin-center  group-hover:opacity-100 group-hover:scale-[60] rounded-full bg-[#AEF1F5]">
+                    </div>
+                    <div class="w-full relative  fill-[#AEF1F5] text-[#75a1a3]  flex justify-center items-center text-sm gap-x-2 capitalize z-20 group-hover:text-slate-900 group-hover:fill-white">
+                        Get Started
+                    </div>
+                    
+                </button>
+            </nav>
+        </section>
+        <section>
+            <h3 class="my-2 text-lg font-medium">Free</h3>
+            <div class="flex justify-start items-end w-full">
+                <h1 class="text-3xl  font-bold">$</h1><h1 class="text-5xl font-bold">33</h1>
+            </div>
+            <p class="text-sm">Free for whole team</p>
+            <p class=" my-10 ">For individuals or teams looking to organize anything.            </p>
+            <nav>
+                <button class="relative w-full group active:translate-y-1 overflow-hidden border border-[#8d6c46] hover:border-[#FFDDB7] px-4 py-2   rounded-full hover:shadow-lg shadow-sm">
+                    <div class="z-10 absolute transition-all duration-200 w-1 h-1 left-1/2 top-1/2 opacity-0 origin-center  group-hover:opacity-100 group-hover:scale-[60] rounded-full bg-[#FFDDB7]">
+                    </div>
+                    <div class="w-full relative  fill-[#EDBBFF] text-[#8d6c46]  flex justify-center items-center text-sm gap-x-2 capitalize z-20 group-hover:text-slate-800 group-hover:fill-white">
+                        Get Started
+                    </div>
+                    
+                </button>
+            </nav>
+        </section>
+       
+    </main>
+</body>
+<script>
+     
+ 
+
+
+</script>
+</html>
