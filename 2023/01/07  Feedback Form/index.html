@@ -13,9 +13,40 @@
 </style>
 
 <!-- Change code below this line -->
-<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] w-screen h-screen">
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] w-screen h-screen flex justify-center items-center">
   
-    <main>
+    <main class=" w-full max-w-md bg-gray-100 rounded-md shadow-xl text-slate-700">
+        <header class="p-5">
+            <h1 class="text-3xl text-sky-500 font-bold">Send us some Feedback!</h1>
+            <p class="mt-5">Do you habe pizza or ice cream? Let us know!</p>
+        </header>
+        <section class="mt-5">
+            <form action="#">
+                <textarea placeholder="describe your issue or idea..." class="bg-white w-full p-5 placeholder:text-lg text-lg" rows="7"></textarea>
+                <div class="p-5">
+                    <div class="flex justify-start items-center gap-12 w-full text-gray-600">
+                        <label>
+                            <input type="radio" name="val" />
+                            Bug
+                        </label>
+                        <label>
+                            <input type="radio" name="val" />
+                            Comment
+                        </label>
+                        <label>
+                            <input type="radio" name="val" />
+                            Feature
+                        </label>
+                    </div>
+                    <div class="w-full text-center my-6">
+                        <button type="submit" class="w-full py-3 bg-sky-500 text-white font-medium text-lg active:translate-y-1 hover:bg-sky-300">Send Feedback</button>
+
+                    </div>
+
+                </div>
+
+            </form>
+        </section>
 
     </main>
 </body>

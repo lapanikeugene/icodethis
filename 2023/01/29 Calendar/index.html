@@ -1,0 +1,202 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+.other-month{
+    color: rgb(197, 197, 197);
+}
+.event-dot {
+    height: 5px;
+    width: 5px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    margin-left: 5px;
+}
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] w-screen h-screen flex justify-center items-center">
+  
+    <main class="w-full max-w-lg rounded-md bg-white/80 overflow-hidden">
+        <nav class="w-full flex justify-between items-center p-3 bg-white/80">
+            <button class="p-2 hover:fill-gray-600 active:translate-y-1" onclick="setMonth(-1)">
+                <svg xmlns="http://www.w3.org/2000/svg" class="hover:fill-gray-400" height="16" width="10" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>
+            </button>
+            <span id="month-year" class="font-bold">
+                 September, 2024
+            </span>
+            <button class="p-2 hover:fill-gray-600 active:translate-y-1"  onclick="setMonth(1)">
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="10" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+            </button>
+        </nav>
+        <article class="p-2">
+            <table id="dateTable" border="1" class="mx-auto p-2 [&_td]:w-12 [&_td]:h-12">
+                <thead>
+                    <tr>
+                        <th class="text-[#9ac05d]">Sun</th>
+                        <th class="text-[#c4ec74]">Mon</th>
+                        <th class="text-[#92dc7e]">Tue</th>
+                        <th class="text-[#64c987]">Wed</th>
+                        <th class="text-[#39b48e]">Thu</th>
+                        <th class="text-[#089f8f]">Fri</th>
+                        <th class="text-[#00898a]">Sat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </article>
+       
+    </main>
+</body>
+<script>
+ const monthYearDisplay = document.getElementById('month-year');
+ const curDate = new Date();
+
+ const  getMonthName = (monthNumber)=> {
+    const monthNames = [
+        "January", "February", "March",
+        "April", "May", "June",
+        "July", "August", "September",
+        "October", "November", "December"
+    ];
+
+    return monthNames[monthNumber] ?? monthNames[0];
+ }
+ monthYearDisplay.innerHTML = curDate.getFullYear()+", "+getMonthName(curDate.getMonth());
+
+
+
+
+ function createMonthTable(d) {
+    const now = new Date(d);
+        const year = now.getFullYear();
+        const month = now.getMonth();
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const previousMonthLastDay = new Date(year, month, 0);
+        const today = new Date();
+
+        let table = document.getElementById('dateTable').getElementsByTagName('tbody')[0];
+        table.innerHTML = ''; // Clear existing table rows
+
+        // Calculate the starting date for the first cell
+        let date = 1 - firstDay.getDay();
+        
+        for (let i = 0; i < 6; i++) {
+            let row = table.insertRow();
+            let isOtherMonthRow = true;
+
+            for (let j = 0; j < 7; j++) {
+                let cell = row.insertCell();
+                cell.classList.add('text-center');
+                cell.classList.add('relative')
+
+                let displayDate = date;
+
+                if (date <= 0) {
+                    // Dates from the previous month
+                    displayDate = previousMonthLastDay.getDate() + date;
+                    cell.classList.add('other-month'); // Optional: Add class for styling
+                } else if (date > lastDay.getDate()) {
+                    // Dates from the next month
+                    displayDate = date - lastDay.getDate();
+                    cell.classList.add('other-month'); // Optional: Add class for styling
+                } else {
+                    // Dates of the current month
+                    isOtherMonthRow = false;
+
+                    if  (date === now.getDate()&&today.getMonth() === now.getMonth()) {
+                        cell.style.backgroundColor = "#add8e6"; // Highlight today's date
+                        cell.classList.add('rounded-full')
+                    }
+
+                     // Check for specific date (e.g., January 20, 2024)
+                    //  we can change it to the array of objects with date and type of dot later. 
+                     if (date === 20 && year === 2024 && month === 0) { // January is month 0
+                        cell.classList.add('bg-red-100');
+                        cell.classList.add('rounded-full')
+                        let dot = document.createElement('div');
+                        dot.title="something todo...";
+                        dot.classList.add('cursor-pointer')
+                        
+                        dot.classList.add('event-dot');
+                        cell.append(dot);
+                      
+                    }
+                }
+              
+                let textNode = document.createTextNode(displayDate);
+                cell.appendChild(textNode);
+                date++;
+                 // Hide the row if all cells are from other months
+                if (isOtherMonthRow&&date>7) {
+                    row.style.display = 'none';
+                }
+            }
+        }
+        
+
+
+
+        // for (let i = 0; i < 6; i++) {
+        //     let row = table.insertRow();
+
+        //     for (let j = 0; j < 7; j++) {
+        //         let cell = row.insertCell();
+                
+        //         if (i === 0 && j < firstDay.getDay() || date > lastDay.getDate()) {
+        //             cell.innerHTML = "";
+        //             continue;
+        //         }
+
+        //         cell.innerHTML = date;
+        //         cell.classList.add("text-center");
+        //         // cell.style.color="white";
+        //         if (date <= 0) {
+        //             // Dates from the previous month
+        //             displayDate = previousMonthLastDate + date;
+        //             cell.classList.add('other-month'); // Optional: Add class for styling
+        //         } else if (date > lastDay.getDate()) {
+        //             // Dates from the next month
+        //             displayDate = date - lastDay.getDate();
+        //             cell.classList.add('other-month'); // Optional: Add class for styling
+        //         }
+
+        //         if (date === now.getDate()&&today.getMonth() === now.getMonth()) {
+        //             cell.style.backgroundColor = "#add8e6"; // Highlight today's date
+        //             cell.classList.add('rounded-full')
+                    
+        //         }
+        //         date++;
+        //     }
+        // }
+    }
+
+    createMonthTable(curDate);
+
+
+ const setMonth = (i)=>{
+   
+    curDate.setMonth(curDate.getMonth() + i);
+    
+
+    monthYearDisplay.innerHTML = curDate.getFullYear()+", "+getMonthName(curDate.getMonth());
+    console.log(curDate);
+    createMonthTable(curDate);
+
+ }
+    
+</script>
+</html>
