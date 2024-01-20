@@ -1,0 +1,154 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+.before-shadow{
+    transform-style: preserve-3d;
+    perspective: 1000;
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 1000;
+}
+.before-shadow::before {
+    transform: translateZ(-10px);
+    background-color: #ffffff;
+    opacity: 40%;
+    content: "";
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: -100;
+    left: -100px;
+    top: -100px;
+
+}
+.before-shadow::after {
+    transform: translateZ(-20px);
+    background-color: #b46464;
+    opacity:  20%;
+    content: "";
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: -200;
+    right: -100px;
+    bottom: -100px;
+
+}
+
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f]">
+   <div class="w-64 h-screen sticky top-0 left-1/2 -translate-x-1/2 bg-[#6f9c33]"></div>
+   <main class="min-w-[800px] absolute  h-full left-1/2 -translate-x-1/2 top-0 flex flex-col gap-10 justify-center items-center min-h-screen text-[#1A1831] ">
+  
+    <section id="section1"  class="hover:z-[999] hover:scale-110 shadow-[0_0_60px_-15px_rgba(0,0,0,0.3)] transition-all duration-200 ease-linear w-80 h-96 text-slate-900  p-10 rounded-lg  relative  bg-white" id="section1">
+        <h1 class="text-xl font-bold  text-purple-600 text-start w-full">Starter</h1>
+        <p class="text-md mb-5 text-start w-full"><strong>12$</strong> per month</p>
+        <ul class="w-full [&>li]:flex [&>li]:capitalize [&>li]:font-medium [&>li]:gap-3 [&>li]:my-3 [&>li]:justify-start [&>li]:items-center">
+            <li>
+                <div class="w-8 h-8 rounded-full flex justify-center items-center bg-green-100">
+                    <svg xmlns="http://www.w3.org/2000/svg"  w="12" h="12" class="w-4 h-4 fill-green-700"  viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+                        <path   d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                </div>
+                Unlimited Projects
+            </li>
+            <li>
+                <div class="w-8 h-8 rounded-full flex justify-center items-center bg-green-100">
+                    <svg xmlns="http://www.w3.org/2000/svg"  w="12" h="12" class="w-4 h-4 fill-green-700"  viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+                        <path   d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                </div>
+                private Projects
+            </li>
+            <li>
+                <div class="w-8 h-8 rounded-full flex justify-center items-center bg-green-100">
+                    <svg xmlns="http://www.w3.org/2000/svg"  w="12" h="12" class="w-4 h-4 fill-green-700"  viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+                        <path   d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                </div>
+                Team Libraries
+            </li>
+          
+          </ul>
+            
+            <button class="rounded-lg mt-5 border-purple-500 w-full max-w-52 h-12 border  active:translate-y-1 text-gray-400 px-10 py-3 text-md shadow-lg relative group overflow-hidden">
+                <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-gray-800">Choose Professional</h5>
+                <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-purple-500"></div>
+            
+            
+            </button>
+            
+    </section>
+    <section class="shadow-[0_0_15px_15px_rgba(244,63,94,0.3)] px-5 py-12 border-8 border-pink-500/85 rounded-xl before-shadow after-shadow hover:scale-110 hover:z-[999] bg-white absolute   w-80 h-96 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 transition-all duration-300 p-4 flex flex-col items-center justify-center" id="section2">
+        <h1 class="text-xl font-bold  text-pink-600 text-start w-full">Professional</h1>
+        <p class="text-md mb-5 text-start w-full"><strong>12$</strong> per month</p>
+        <ul class="w-full [&>li]:flex [&>li]:capitalize [&>li]:font-medium [&>li]:gap-3 [&>li]:my-3 [&>li]:justify-start [&>li]:items-center">
+        <li>
+            <div class="w-8 h-8 rounded-full flex justify-center items-center bg-green-100">
+                <svg xmlns="http://www.w3.org/2000/svg"  w="12" h="12" class="w-4 h-4 fill-green-700"  viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+                    <path   d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+            </div>
+            Unlimited Projects
+        </li>
+        <li>
+            <div class="w-8 h-8 rounded-full flex justify-center items-center bg-green-100">
+                <svg xmlns="http://www.w3.org/2000/svg"  w="12" h="12" class="w-4 h-4 fill-green-700"  viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+                    <path   d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+            </div>
+            private Projects
+        </li>
+        <li>
+            <div class="w-8 h-8 rounded-full flex justify-center items-center bg-green-100">
+                <svg xmlns="http://www.w3.org/2000/svg"  w="12" h="12" class="w-4 h-4 fill-green-700"  viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+                    <path   d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+            </div>
+            Team Libraries
+        </li>
+      
+      </ul>
+        
+        <button class="rounded-lg mt-5 border-pink-500 w-full max-w-52 h-12 border  active:translate-y-1 text-gray-400 px-10 py-3 text-md shadow-lg relative group overflow-hidden">
+            <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-gray-800">Choose Professional</h5>
+            <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-pink-500"></div>
+        
+        
+        </button>
+        
+    </section>
+
+
+    
+   </main>
+
+</body>
+<script>
+ 
+
+     const mBar = document.getElementById('mBar');
+     const section1 = document.getElementById('section1');
+     const section2 = document.getElementById('section2');
+     const moveTo = (i) =>{
+        mBar.style.transform = `translate(0,${i===0 ? 85 : 175}px)`;
+        mBar.style.opacity='100';
+     }
+
+     const init = ()=>{
+        section1.classList.add('-translate-x-[150px]');
+        section1.classList.add('-translate-y-20');
+        section2.classList.add('translate-x-[150px]');
+        section2.classList.add('');
+       
+     }
+
+     setTimeout(init,300);
+    
+</script>
+</html>
