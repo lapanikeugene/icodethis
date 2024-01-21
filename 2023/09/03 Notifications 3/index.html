@@ -1,0 +1,172 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] w-screen h-screen flex justify-center items-start pt-10">
+  
+    <main>
+        <div id="tgbt" onclick="togglePopup()" class="w-12 h-12 bg-slate-800 hover:bg-slate-600 rounded-lg fill-white flex justify-center items-center relative cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8"  viewBox="0 0 448 512">
+                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+                <path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v25.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm0 96c61.9 0 112 50.1 112 112v25.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V208c0-61.9 50.1-112 112-112zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"/>
+            </svg>
+            
+        </div>
+        <div class=" absolute w-96 h-96  bg-white rounded-lg shadow-lg origin-top-right transition-all duration-300 scale-0" id="info">
+            <header class="flex justify-between items-center  p-5">
+                <h1 class="text-xl font-medium">Notifications</h1>
+                <button class="bg-blue-300 active:translate-y-1 hover:bg-blue-100 rounded-3xl px-3 py-1 text-white">mark all as read</button>
+            </header>
+            <section class="text-blue-950 max-h-72 overflow-auto px-5 ">
+                <div class="border-t grid grid-cols-5 gap-x-3 py-6 mt-6">
+                    <img class="col-span-1 w-12 h-12 object-cover rounded-full " src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                    <div class="col-span-4 mt-3">
+                        <p><strong>Mr. Whiskers</strong> shared files through its tray</p>
+                        <p class="text-sm my-3">an hour ago</p>
+                        <div class="w-full grid grid-cols-2 gap-3">
+                         
+                            <button class="mx-auto border-red-500 w-full h-12 border uppercase active:translate-y-1 text-red-500 px-5 py-3 text-lg shadow-lg relative group overflow-hidden">
+                                <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-red-500">Decline</h5>
+                                <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-red-500"></div>
+                            
+                            
+                            </button>
+                            <button class="mx-auto border-sky-800 w-full h-12 border uppercase active:translate-y-1 text-gray-400 px-5 py-3 text-lg shadow-lg relative group overflow-hidden">
+                                <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-sky-800">Accept</h5>
+                                <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-sky-800"></div>
+                            
+                            
+                            </button>
+                                                            
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t grid grid-cols-5 gap-x-3 py-6 mt-6">
+                    <img class="col-span-1 w-12 h-12 object-cover rounded-full " src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                    <div class="col-span-4 mt-3">
+                        <p><strong>Mr. Whiskers</strong> shared files through its tray</p>
+                        <p class="text-sm my-3">an hour ago</p>
+                        <div class="w-full grid grid-cols-2 gap-3">
+                         
+                            <button class="mx-auto border-red-500 w-full h-12 border uppercase active:translate-y-1 text-red-500 px-5 py-3 text-lg shadow-lg relative group overflow-hidden">
+                                <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-red-500">Decline</h5>
+                                <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-red-500"></div>
+                            
+                            
+                            </button>
+                            <button class="mx-auto border-sky-800 w-full h-12 border uppercase active:translate-y-1 text-gray-400 px-5 py-3 text-lg shadow-lg relative group overflow-hidden">
+                                <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-sky-800">Accept</h5>
+                                <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-sky-800"></div>
+                            
+                            
+                            </button>
+                                                            
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t grid grid-cols-5 gap-x-3 py-6 mt-6">
+                    <img class="col-span-1 w-12 h-12 object-cover rounded-full " src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                    <div class="col-span-4 mt-3">
+                        <p><strong>Mr. Whiskers</strong> shared files through its tray</p>
+                        <p class="text-sm my-3">an hour ago</p>
+                        <div class="w-full grid grid-cols-2 gap-3">
+                         
+                            <button class="mx-auto border-red-500 w-full h-12 border uppercase active:translate-y-1 text-red-500 px-5 py-3 text-lg shadow-lg relative group overflow-hidden">
+                                <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-red-500">Decline</h5>
+                                <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-red-500"></div>
+                            
+                            
+                            </button>
+                            <button class="mx-auto border-sky-800 w-full h-12 border uppercase active:translate-y-1 text-gray-400 px-5 py-3 text-lg shadow-lg relative group overflow-hidden">
+                                <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-sky-800">Accept</h5>
+                                <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-sky-800"></div>
+                            
+                            
+                            </button>
+                                                            
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t grid grid-cols-5 gap-x-3 py-6 mt-6">
+                    <img class="col-span-1 w-12 h-12 object-cover rounded-full " src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                    <div class="col-span-4 mt-3">
+                        <p><strong>Mr. Whiskers</strong> shared files through its tray</p>
+                        <p class="text-sm my-3">an hour ago</p>
+                        <div class="w-full grid grid-cols-2 gap-3">
+                         
+                            <button class="mx-auto border-red-500 w-full h-12 border uppercase active:translate-y-1 text-red-500 px-5 py-3 text-lg shadow-lg relative group overflow-hidden">
+                                <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-red-500">Decline</h5>
+                                <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-red-500"></div>
+                            
+                            
+                            </button>
+                            <button class="mx-auto border-sky-800 w-full h-12 border uppercase active:translate-y-1 text-gray-400 px-5 py-3 text-lg shadow-lg relative group overflow-hidden">
+                                <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-sky-800">Accept</h5>
+                                <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-sky-800"></div>
+                            
+                            
+                            </button>
+                                                            
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t grid grid-cols-5 gap-x-3 py-6 mt-6">
+                    <img class="col-span-1 w-12 h-12 object-cover rounded-full " src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                    <div class="col-span-4 mt-3">
+                        <p><strong>Mr. Whiskers</strong> shared files through its tray</p>
+                        <p class="text-sm my-3">an hour ago</p>
+                        <div class="w-full grid grid-cols-2 gap-3">
+                         
+                            <button class="mx-auto border-red-500 w-full h-12 border uppercase active:translate-y-1 text-red-500 px-5 py-3 text-lg shadow-lg relative group overflow-hidden">
+                                <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-red-500">Decline</h5>
+                                <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-red-500"></div>
+                            
+                            
+                            </button>
+                            <button class="mx-auto border-sky-800 w-full h-12 border uppercase active:translate-y-1 text-gray-400 px-5 py-3 text-lg shadow-lg relative group overflow-hidden">
+                                <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-sky-800">Accept</h5>
+                                <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-sky-800"></div>
+                            
+                            
+                            </button>
+                                                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+</body>
+<script>
+    let isOpen = false;
+    const infoPopup = document.getElementById('info');
+    const tgbt = document.getElementById('tgbt');
+    const position = tgbt.getBoundingClientRect();
+    infoPopup.style.top  =50+position.top +'px';
+    infoPopup.style.left  =position.left -384+50 +'px';
+
+    const togglePopup = ()=>{
+        if(isOpen){
+        isOpen = false;
+        infoPopup.classList.remove('scale-100');
+    }else{
+        isOpen = true;
+        infoPopup.classList.add('scale-100');
+    }
+    }
+    
+    
+</script>
+</html>
