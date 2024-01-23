@@ -1,0 +1,194 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] w-screen h-screen flex justify-center items-center">
+  
+    <main class="w-full max-w-sm rounded-md bg-white/80 overflow-hidden relative">
+        <nav class="w-full flex justify-between items-center p-3 bg-white/80">
+            <button class="p-2 hover:fill-gray-600 active:translate-y-1" onclick="setMonth(-1)">
+                <svg xmlns="http://www.w3.org/2000/svg" class="hover:fill-gray-400" height="16" width="10" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>
+            </button>
+            <span id="month-year" class="font-bold">
+                 September, 2024
+            </span>
+            <button class="p-2 hover:fill-gray-600 active:translate-y-1"  onclick="setMonth(1)">
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="10" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+            </button>
+        </nav>
+        <article class=" ">
+            <div class="relative">
+                <img
+                class="w-full h-full object-cover  absolute z-10 left-0 top-0 opacity-60 -hue-rotate-60"
+                src="https://images.unsplash.com/photo-1597200381847-30ec200eeb9a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                <table id="dateTable" border="1" class="text-white font-bold mx-auto p-2 [&_td]:w-12 [&_td]:h-12 relative z-50">
+                    <thead>
+                        <tr>
+                            <th >Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th >Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+           
+
+            <section class="bg-white min-h-96 p-2">
+                <section class="w-full flex justify-start items-center gap-3 mt-1">
+                    <div class="w-16 h-16 bg-gray-200 flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-green-500" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-gray-600 text-lg font-medium">Some thing to do</h3>
+                        <p class="text-gray-400">13:00</p>
+
+                    </div>
+
+                </section>
+                <section class="w-full flex justify-start items-center gap-3 mt-1">
+                    <div class="w-16 h-16 bg-gray-200 flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-gray-500" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="text-gray-600 text-lg font-medium">Some thing to do</h3>
+                        <p class="text-gray-400">13:00</p>
+
+                    </div>
+
+                </section>
+            </section>
+        </article>
+       
+        <button class="absolute right-2 bottom-2 z-50">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 fill-white" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+        </button>
+        <div class="w-48 h-48 bg-[#3DD9EB] -bottom-24 -right-28 absolute rounded-full z-10">
+
+        </div>
+    </main>
+</body>
+<script>
+    const monthYearDisplay = document.getElementById('month-year');
+    const curDate = new Date();
+   
+    const  getMonthName = (monthNumber)=> {
+       const monthNames = [
+           "January", "February", "March",
+           "April", "May", "June",
+           "July", "August", "September",
+           "October", "November", "December"
+       ];
+   
+       return monthNames[monthNumber] ?? monthNames[0];
+    }
+    monthYearDisplay.innerHTML = curDate.getFullYear()+", "+getMonthName(curDate.getMonth());
+   
+   
+   
+   
+    function createMonthTable(d) {
+       const now = new Date(d);
+           const year = now.getFullYear();
+           const month = now.getMonth();
+           const firstDay = new Date(year, month, 1);
+           const lastDay = new Date(year, month + 1, 0);
+           const previousMonthLastDay = new Date(year, month, 0);
+           const today = new Date();
+   
+           let table = document.getElementById('dateTable').getElementsByTagName('tbody')[0];
+           table.innerHTML = ''; // Clear existing table rows
+   
+           // Calculate the starting date for the first cell
+           let date = 1 - firstDay.getDay();
+           
+           for (let i = 0; i < 6; i++) {
+               let row = table.insertRow();
+               let isOtherMonthRow = true;
+   
+               for (let j = 0; j < 7; j++) {
+                   let cell = row.insertCell();
+                   cell.classList.add('text-center');
+                   cell.classList.add('relative')
+   
+                   let displayDate = date;
+   
+                   if (date <= 0) {
+                       // Dates from the previous month
+                       displayDate = previousMonthLastDay.getDate() + date;
+                       cell.classList.add('other-month'); // Optional: Add class for styling
+                   } else if (date > lastDay.getDate()) {
+                       // Dates from the next month
+                       displayDate = date - lastDay.getDate();
+                       cell.classList.add('other-month'); // Optional: Add class for styling
+                   } else {
+                       // Dates of the current month
+                       isOtherMonthRow = false;
+   
+                       if  (date === now.getDate()&&today.getMonth() === now.getMonth()) {
+                           cell.style.backgroundColor = "#B5BCED"; // Highlight today's date
+                           cell.classList.add('rounded-full')
+                       }
+   
+                        // Check for specific date (e.g., January 20, 2024)
+                       //  we can change it to the array of objects with date and type of dot later. 
+                        if (date === 20 && year === 2024 && month === 0) { // January is month 0
+                           cell.classList.add('bg-red-300');
+                           cell.classList.add('rounded-full')
+                           let dot = document.createElement('div');
+                           dot.title="something todo...";
+                           dot.classList.add('cursor-pointer')
+                           
+                           dot.classList.add('event-dot');
+                           cell.append(dot);
+                         
+                       }
+                   }
+                 
+                   let textNode = document.createTextNode(displayDate);
+                   cell.appendChild(textNode);
+                   date++;
+                    // Hide the row if all cells are from other months
+                   if (isOtherMonthRow&&date>7) {
+                       row.style.display = 'none';
+                   }
+               }
+           }
+           
+   
+   
+   
+       }
+   
+       createMonthTable(curDate);
+   
+   
+    const setMonth = (i)=>{
+      
+       curDate.setMonth(curDate.getMonth() + i);
+       
+   
+       monthYearDisplay.innerHTML = curDate.getFullYear()+", "+getMonthName(curDate.getMonth());
+       console.log(curDate);
+       createMonthTable(curDate);
+   
+    }
+       
+   </script>
+</html>
