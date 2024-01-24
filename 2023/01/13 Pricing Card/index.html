@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+  .before-shadow{
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 1000;
+}
+
+.before-shadow::before {
+    transform: translateZ(-10px)  translate(-50%,0);
+    background-color: #4e4e4e;
+    opacity: 20%;
+    content: "";
+    width: 105%;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -100;
+    left: 50%;
+   
+    bottom: -80px;
+
+}
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] w-screen h-screen flex justify-center items-center">
+  
+    <main class="w-full max-w-3xl rounded-xl bg-[#22161A] text-gray-100 relative before-shadow p-20 grid gap-x-5 grid-cols-5 shadow-[0_12px_25px_5px_rgba(0,0,0,0.3)]    ">
+        <section class="col-span-2">
+            <h1 class="text-3xl font-bold">Basic</h1>
+            <h3 class="text-lg mt-5">Free</h3>
+            <p>3,000 monthly visitors</p>
+            <ul class="my-14">
+                <li class="list-disc ml-5">Limited Reports</li>
+                <li class="list-disc ml-5">Unlimited projects</li>
+                <li class="list-disc ml-5">data storage for 1 year</li>
+            </ul>
+            <button class="mx-auto border-white w-full max-w-52 h-12 border uppercase active:translate-y-1 text-gray-400 px-5 py-3 text-lg shadow-lg relative group overflow-hidden">
+                <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-gray-400 text-white">Start Now</h5>
+                <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-white"></div>
+            
+            
+            </button>
+        </section>
+        <section class="col-span-1 flex justify-center items-center">
+            <div class="w-[1px] h-full bg-gray-400/50 "></div>
+        </section>
+        <section class="ml-10 col-span-2">
+            <h1 class="text-3xl font-bold">Basic</h1>
+            <h3 class="text-lg mt-5">Free</h3>
+            <p>3,000 monthly visitors</p>
+            <ul class="my-14">
+                <li class="list-disc ml-5">Limited Reports</li>
+                <li class="list-disc ml-5">Unlimited projects</li>
+                <li class="list-disc ml-5">data storage for 1 year</li>
+            </ul>
+            <button class="mx-auto border-red-500 w-full max-w-52 h-12 border uppercase active:translate-y-1 text-gray-400 px-5 py-3 text-lg shadow-lg relative group overflow-hidden">
+                <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-gray-100 text-white">Try It!</h5>
+                <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-red-500"></div>
+            
+            
+            </button>
+        </section>
+
+    </main>
+</body>
+<script>
+ 
+    
+</script>
+</html>
