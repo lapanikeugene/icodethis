@@ -1,0 +1,142 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+.arrow-down::before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    bottom: -10px;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    
+    border-top: 20px solid rgb(255, 255, 255);
+  }
+
+  .arrow-right::before {
+    display: block;
+    content: "";
+    position: absolute;
+    right: -10px;
+    transform: translate(0,-50%);
+    top: 50%;
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 13px solid  rgb(51, 65, 85);
+  }
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] w-screen h-screen flex justify-center items-center">
+  <!-- top right button -->
+  <button id="tgbt" onclick="togglePopup()" class="w-20 h-20 bg-slate-800 hover:bg-slate-600 rounded-full ring-8 ring-purple-300 fill-white flex justify-center items-center absolute bottom-[40%] left-[30%] cursor-pointer">
+            
+    <img
+    class="w-20 h-20 rounded-full object-cover" 
+    src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+     />
+</button>
+<div class="arrow-down absolute w-96 h-48  bg-white rounded-lg shadow-lg origin-bottom transition-all duration-300 scale-0 flex justify-start items-center p-5 gap-5" id="info">
+   <img
+   class="w-20 h-20 rounded-full object-cover" 
+   src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    />
+    <div class="w-full flex flex-col items-center justify-start gap-3">
+        <h1 class="text-lg font-medium my-2">Mr. Whiskers</h1>
+        <span>Master of Chaos <a href="#" class="text-purple-400">@ SomeCompany</a></span>
+        <button class="mx-auto border-purple-400 w-full max-w-52 h-12 border uppercase active:translate-y-1 text-gray-400 px-5 py-3 text-lg shadow-lg shadow-purple-300 relative group overflow-hidden">
+            <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-purple-400">Message</h5>
+            <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-purple-400"></div>
+        
+        
+        </button>
+    </div>
+</div>
+    
+
+    <!-- bottom left button -->
+        <button id="tgbtTR" onclick="togglePopupTopRight()" class="w-20 h-20 bg-slate-800 hover:bg-slate-600 rounded-full ring-8 ring-purple-300 fill-white flex justify-center items-center absolute top-[40%] right-[30%] cursor-pointer">
+            
+            <img
+            class="w-20 h-20 rounded-full object-cover" 
+            src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+             />
+        </button>
+        <div class="arrow-right absolute w-96 h-64 text-white  bg-slate-700 rounded-lg shadow-lg origin-bottom transition-all duration-300 scale-0 flex flex-col justify-center items-center p-5 gap-5" id="infoTR">
+           <div>
+            <img
+            class="w-20 h-20 rounded-full object-cover flex-grow" 
+            src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+             />
+           </div>
+       
+            <div class="w-full flex flex-col items-center justify-start gap-3">
+                <h1 class="text-xl font-medium ">Mr. Whiskers</h1>
+                <span>Master of Chaos <a href="#" class="text-purple-400">@ SomeCompany</a></span>
+                <button class="mx-auto border-purple-400 w-full max-w-52 h-12 border uppercase active:translate-y-1 text-gray-400 px-5 py-3 text-lg shadow-lg shadow-purple-800 relative group overflow-hidden">
+                    <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-purple-400">Message</h5>
+                    <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-purple-400"></div>
+                
+                
+                </button>
+            </div>
+        </div>
+</body>
+<script>
+ let isOpen = false;
+const infoPopup = document.getElementById('info');
+const tgbt = document.getElementById('tgbt');
+
+
+const togglePopup = ()=>{
+    const position = tgbt.getBoundingClientRect();
+
+    infoPopup.style.top  =position.top-190 +'px';
+infoPopup.style.left  =position.left -192+40 +'px';
+
+    if(isOpen){
+    isOpen = false;
+    infoPopup.classList.remove('scale-100');
+}else{
+    isOpen = true;
+    infoPopup.classList.add('scale-100');
+}
+}
+
+// top rigth
+
+let isOpenTR = false;
+const infoPopupTR = document.getElementById('infoTR');
+const tgbtTR = document.getElementById('tgbtTR');
+
+const togglePopupTopRight = ()=>{
+    const position = tgbtTR.getBoundingClientRect();
+
+    infoPopupTR.style.top  =position.top-85 +'px';
+    infoPopupTR.style.left  =position.left -384-10 +'px';
+
+    if(isOpenTR){
+        isOpenTR = false;
+    infoPopupTR.classList.remove('scale-100');
+}else{
+    isOpenTR = true;
+    infoPopupTR.classList.add('scale-100');
+}
+}
+
+    
+</script>
+</html>
