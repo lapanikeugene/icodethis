@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] w-screen h-screen flex justify-center items-center">
+  
+    <main class="w-full max-w-2xl bg-slate-800 rounded-sm shadow-md justify-center items-center flex text-pink-400 px-14 py-3 gap-10 relative">
+        <div class="text-purple-700 absolute left-1/2 -translate-x-1/2 -bottom-5">1447 items</div>
+        <button id="button-left" class="text-xs active:translate-y-1" onclick="prevPage()">Prev</button>
+        <div class=" text-gray-300 flex justify-center items-center text-sm" id="page-navigation"></div>
+        <button id="button-right"  class="text-xs  active:translate-y-1" onclick="nextPage()">Next</button>
+    </main>
+</body>
+<script>
+ 
+ const bLeft = document.getElementById('button-left');
+const bRight = document.getElementById('button-right');
+const pNavigation = document.getElementById('page-navigation');
+
+const pages = 29;
+let curPage = 1;
+
+const renderPages = () => {
+  pNavigation.innerHTML = "";
+  let startPage = Math.max(1, curPage - 2);
+  let endPage = Math.min(curPage + 2, pages);
+
+  if (startPage > 1) {
+    pNavigation.appendChild(createPageElement(1));
+    if (startPage > 2) {
+      pNavigation.appendChild(createEllipsis());
+    }
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
+    pNavigation.appendChild(createPageElement(i));
+  }
+
+  if (endPage < pages) {
+    if (endPage < pages - 1) {
+      pNavigation.appendChild(createEllipsis());
+    }
+    pNavigation.appendChild(createPageElement(pages));
+  }
+
+  bLeft.disabled = curPage === 1;
+  bRight.disabled = curPage === pages;
+};
+
+const createPageElement = (pageNum) => {
+  const pageElement = document.createElement('button');
+  pageElement.className = `w-10 h-10 flex justify-center items-center cursor-pointer rounded-full ${pageNum === curPage ? 'ring-pink-500 ring font-bold text-pink-500 text-lg' : 'hover:ring-pink-300 hover:ring hoveer:text-pink-300  text-sm'}`;
+  pageElement.textContent = pageNum;
+  pageElement.onclick = () => setPage(pageNum);
+  return pageElement;
+};
+
+const createEllipsis = () => {
+  const ellipsis = document.createElement('div');
+  ellipsis.className = 'text-xl';
+  ellipsis.textContent = '...';
+  return ellipsis;
+};
+
+const setPage = (pageNum) => {
+  curPage = pageNum;
+  renderPages();
+};
+
+const nextPage = () => {
+  if (curPage < pages) {
+    curPage++;
+    renderPages();
+  }
+};
+
+const prevPage = () => {
+  if (curPage > 1) {
+    curPage--;
+    renderPages();
+  }
+};
+
+
+renderPages();
+    
+</script>
+</html>
