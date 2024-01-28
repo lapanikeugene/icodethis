@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<style>
+    .before-shadow{
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 1000;
+}
+
+.before-shadow::before {
+    transform: translateZ(-10px);
+    background-image: linear-gradient(to right, #3FDDBA, #3FDEA9);
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    position: absolute;
+    opacity: 30%;
+    z-index: -100;
+    left: -10%;
+    top: -10%;
+
+}
+
+
+
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] w-screen h-screen flex justify-center items-center">
+  
+    <main class="max-w-lg w-full bg-white before-shadow shadow-xl shadow-cyan-300 p-10 rounded-3xl">
+        <h1>Your messages</h1>
+        <button class="mx-auto border-[#86bd3f] w-full mt-10 h-12 border uppercase active:translate-y-1 text-gray-400 px-5 py-3 text-lg shadow-lg hover:shadow-green-200 relative group overflow-hidden">
+            <h5 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full group-hover:text-white text-[#86bd3f]">submit Now</h5>
+            <div class="transition-all w-1 group-hover:w-full absolute left-0 top-0 duration-200 h-full z-10 bg-[#86bd3f]"></div>
+        
+        
+        </button>
+        <article class="mt-10 [&>section]:my-5 [&>section]:flex [&>section]:justify-start [&>section]:items-center [&>section]:gap-5">
+            <section class=" hover:bg-gray-50 hover:ring-[1px] hover:ring-gray-300 rounded-lg p-2  hover:shadow-sm hover:shadow-green-300  cursor-pointer ">
+                <div class="w-16 h-16 relative">
+                    <div class="w-4 h-4 z-50 rounded-full  bg-green-300 border-4 border-white animate-pulse absolute top-0 right-0"></div>
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="notification-dot w-16 h-16 rounded-full relative object-cover z-10" />
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-lg font-bold text-start">Rafel Joy</h3>
+                    <p>Blah-Blah-Blah</p>
+                </div>
+                <div class="text-sm text-gray-400 ">
+                    4 days ago.
+                </div>
+               
+            </section>
+            <section class=" hover:bg-gray-50 hover:ring-[1px] hover:ring-gray-300 rounded-lg p-2  hover:shadow-sm hover:shadow-green-300  cursor-pointer ">
+                <div class="w-16 h-16 relative">
+                    <div class="w-4 h-4 z-50 rounded-full  bg-orange-400 border-4 border-white animate-pulse absolute top-0 right-0"></div>
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="notification-dot w-16 h-16 rounded-full relative object-cover z-10" />
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-lg font-bold text-start">Rafel Joy</h3>
+                    <p>Blah-Blah-Blah</p>
+                </div>
+                <div class="text-sm text-gray-400 ">
+                    4 days ago.
+                </div>
+               
+            </section>
+            <section class=" hover:bg-gray-50 hover:ring-[1px] hover:ring-gray-300 rounded-lg p-2  hover:shadow-sm hover:shadow-green-300  cursor-pointer ">
+                <div class="w-16 h-16 relative">
+                    <div class="w-4 h-4 z-50 rounded-full  bg-gray-400 border-4 border-white absolute top-0 right-0"></div>
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="notification-dot w-16 h-16 rounded-full relative object-cover z-10" />
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-lg font-bold text-start">Rafel Joy</h3>
+                    <p>Blah-Blah-Blah</p>
+                </div>
+                <div class="text-sm text-gray-400 ">
+                    4 days ago.
+                </div>
+               
+            </section>
+            <section class=" hover:bg-gray-50 hover:ring-[1px] hover:ring-gray-300 rounded-lg p-2  hover:shadow-sm hover:shadow-green-300  cursor-pointer ">
+                <div class="w-16 h-16 relative">
+                    <div class="w-4 h-4 z-50 rounded-full  bg-green-300 border-4 border-white animate-pulse absolute top-0 right-0"></div>
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="notification-dot w-16 h-16 rounded-full relative object-cover z-10" />
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-lg font-bold text-start">Rafel Joy</h3>
+                    <p>Blah-Blah-Blah</p>
+                </div>
+                <div class="text-sm text-gray-400 ">
+                    4 days ago.
+                </div>
+               
+            </section>
+           
+        </article>
+       
+
+    </main>
+</body>
+<script>
+ 
+    
+</script>
+</html>

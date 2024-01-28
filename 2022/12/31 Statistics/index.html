@@ -1,0 +1,154 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Remove the line below if you don't want to use TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<style>
+
+</style>
+
+<!-- Change code below this line -->
+<body class="bg-gradient-to-t to-[#c6d3a1] from-[#86bd3f] w-screen h-screen flex justify-center items-center">
+  
+    <main class="w-full max-w-5xl bg-white rounded-3xl md:p-20 p-5">
+        <nav class="w-full grid grid-cols-2 md:grid-cols-4 md:gap-4 gap-1 md:[&>button]:p-10  [&>button]:p-3">
+            <button class="text-center rounded-xl w-full hover:bg-violet-400 text-slate-800 hover:text-white hover:shadow-lg hover:shadow-violet-200 ">
+                <p>Impressions</p>
+                <h1 class="font-bold text-5xl">69%</h1>
+            </button>
+            <button class="text-center rounded-xl w-full hover:bg-violet-400 text-slate-800 hover:text-white hover:shadow-lg hover:shadow-violet-200">
+                <p>Clickbates</p>
+                <h1 class="font-bold text-5xl">169%</h1>
+            </button>
+            <button class="text-center rounded-xl w-full hover:bg-violet-400 text-slate-800 hover:text-white hover:shadow-lg hover:shadow-violet-200">
+                <p>Views</p>
+                <h1 class="font-bold text-5xl">69</h1>
+            </button>
+            <button class="text-center rounded-xl w-full hover:bg-violet-400 text-slate-800 hover:text-white hover:shadow-lg hover:shadow-violet-200">
+                <p>Unique Views</p>
+                <h1 class="font-bold text-5xl">696</h1>
+            </button>
+        </nav>
+        <canvas id="myChart" class="mt-5 md:max-h-96 h-full"></canvas>
+
+    </main>
+</body>
+<script>
+  const ctx = document.getElementById('myChart');
+  const DATA_COUNT = 7;
+    const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
+
+const data = {
+  labels: ['22','44','66','88','99',',122'],
+  datasets: [
+    {
+      label: 'icodethis',
+      data: [0.4,0.69,0.1,0.3,0.8,0.6],
+      borderColor: "#581C87",
+      backgroundColor: 'white',
+    }
+  ]
+};
+
+  const config = {
+  type: 'line',
+  data: data,
+ 
+  options: {
+    scales: {
+        y: {
+            ticks: {
+                format: {
+                    style: 'percent'
+                }
+            }
+        }
+    },
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+        display: false,
+
+      },
+      title: {
+        display: false,
+        text: 'Chart.js Line Chart'
+      }
+    }
+  },
+};
+
+
+const actions = [
+  {
+    name: 'Randomize',
+    handler(chart) {
+      chart.data.datasets.forEach(dataset => {
+        dataset.data = Utils.numbers({count: chart.data.labels.length, min: -100, max: 100});
+      });
+      chart.update();
+    }
+  },
+  {
+    name: 'Add Dataset',
+    handler(chart) {
+      const data = chart.data;
+      const dsColor = Utils.namedColor(chart.data.datasets.length);
+      const newDataset = {
+        label: 'Dataset ' + (data.datasets.length + 1),
+        backgroundColor: Utils.transparentize(dsColor, 0.5),
+        borderColor: dsColor,
+        data: Utils.numbers({count: data.labels.length, min: -100, max: 100}),
+      };
+      chart.data.datasets.push(newDataset);
+      chart.update();
+    }
+  },
+  {
+    name: 'Add Data',
+    handler(chart) {
+      const data = chart.data;
+      if (data.datasets.length > 0) {
+        data.labels = Utils.months({count: data.labels.length + 1});
+
+        for (let index = 0; index < data.datasets.length; ++index) {
+          data.datasets[index].data.push(Utils.rand(-100, 100));
+        }
+
+        chart.update();
+      }
+    }
+  },
+  {
+    name: 'Remove Dataset',
+    handler(chart) {
+      chart.data.datasets.pop();
+      chart.update();
+    }
+  },
+  {
+    name: 'Remove Data',
+    handler(chart) {
+      chart.data.labels.splice(-1, 1); // remove the label first
+
+      chart.data.datasets.forEach(dataset => {
+        dataset.data.pop();
+      });
+
+      chart.update();
+    }
+  }
+];
+
+
+new Chart(ctx,config);
+    
+</script>
+</html>
