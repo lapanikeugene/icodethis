@@ -1,5 +1,11 @@
 # icodethis
 Completed Challanges from https://icodethis.com/ (front end tasks. Tailwind + html)
+## Highlights
+|                                      |                                      |
+|:------------------------------------:|:------------------------------------:|
+|Social Login<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2022/12/14/src/screenshot.gif" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2022/12/14/src/index.html)   [live](https://icodethis.com/submissions/59108)
+
+## Other challanges
 
 |                                      |                                      |
 |:------------------------------------:|:------------------------------------:|
