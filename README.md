@@ -1,5 +1,5 @@
 # icodethis
-Completed Challanges from https://icodethis.com/ (front end tasks. Tailwind + JS + html). I completed more than 80 of the and learned a lot new things. 
+Completed Challanges from https://icodethis.com/ (front end tasks. Tailwind + JS + css + html). I completed more than 80 of the and learned a lot new things. 
 
 ## Highlights
 |                                      |                                      |
