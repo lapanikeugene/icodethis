@@ -5,7 +5,8 @@ Completed Challanges from https://icodethis.com/ (front end tasks. Tailwind + JS
 |                                      |                                      |
 |:------------------------------------:|:------------------------------------:|
 |Mobile Menu<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2022/12/14/src/screenshot.gif" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2022/12/14/src/index.html)   [live](https://icodethis.com/submissions/59108) |Color Generator<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/02/15/src/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/02/15/src/index.html)   [live](https://icodethis.com/submissions/58238)
-|Progression<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/03/12/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/03/12/index.html)   [live](https://icodethis.com/submissions/63154)
+|Progression<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/03/12/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/03/12/index.html)   [live](https://icodethis.com/submissions/63154) |Onboarding 2<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/11/01/src/screenshot.gif" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/11/01/src/index.html)   [live](https://icodethis.com/submissions/57605)
+
 
 ## Other challanges
 
@@ -38,6 +39,12 @@ Completed Challanges from https://icodethis.com/ (front end tasks. Tailwind + JS
 |  Simple Testimonials <br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/08/01%20Pricing%20Cards/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/08/01%20Pricing%20Cards/index.html)   [live](https://icodethis.com/submissions/64905) |  Simple Testimonials <br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/08/18/src/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/08/18/src/index.html)   [live](https://icodethis.com/submissions/60209) 
 | Notifications 3 <br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/09/03%20Notifications%203/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/09/03%20Notifications%203/index.html)   [live](https://icodethis.com/submissions/64809) | Reviews 3 <br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/09/04%20Reviews%203/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/09/04%20Reviews%203/index.html)   [live](https://icodethis.com/submissions/65616) 
  | Pagination 4 <br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/09/17/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/09/17/index.html)   [live](https://icodethis.com/submissions/65616)  | User Card 2 <br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/10/01/src/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/10/01/src/index.html)   [live](https://icodethis.com/submissions/57995) 
- | Halloween <br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/10/31/src/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/10/31/src/index.html)   [live](https://icodethis.com/submissions/46832) 
+ | Halloween <br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/10/31/src/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/10/31/src/index.html)   [live](https://icodethis.com/submissions/46832) | Post Card 2 <br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/11/02/src/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/11/02/src/index.html)   [live](https://icodethis.com/submissions/47217) 
+
+
+
+
+
+
 
 
