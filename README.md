@@ -6,6 +6,7 @@ Completed Challanges from https://icodethis.com/ (front end tasks. Tailwind + JS
 |:------------------------------------:|:------------------------------------:|
 |Mobile Menu<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2022/12/14/src/screenshot.gif" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2022/12/14/src/index.html)   [live](https://icodethis.com/submissions/59108) |Color Generator<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/02/15/src/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/02/15/src/index.html)   [live](https://icodethis.com/submissions/58238)
 |Progression<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/03/12/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/03/12/index.html)   [live](https://icodethis.com/submissions/63154) |Onboarding 2<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/11/01/src/screenshot.gif" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/11/01/src/index.html)   [live](https://icodethis.com/submissions/57605)
+|Onboarding 2<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/11/05%20%20Smart%20Bulb/screenshot.gif" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/11/05%20%20Smart%20Bulb/index.html)   [live](https://icodethis.com/submissions/64713)
 
 
 ## Other challanges
