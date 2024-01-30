@@ -5,7 +5,7 @@ Completed Challanges from https://icodethis.com/ (front end tasks. Tailwind + JS
 |                                      |                                      |
 |:------------------------------------:|:------------------------------------:|
 |Mobile Menu<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2022/12/14/src/screenshot.gif" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2022/12/14/src/index.html)   [live](https://icodethis.com/submissions/59108) |Color Generator<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/02/15/src/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/02/15/src/index.html)   [live](https://icodethis.com/submissions/58238)
-|Color Generator<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/03/12/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/03/12/index.html)   [live](https://icodethis.com/submissions/63154)
+|Progression<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/03/12/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/03/12/index.html)   [live](https://icodethis.com/submissions/63154)
 
 ## Other challanges
 
