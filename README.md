@@ -33,12 +33,8 @@ Completed Challanges from https://icodethis.com/ (front end tasks. Tailwind + JS
 |  Photo Gallery<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/03/01%20%20Photo%20Gallery/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/03/01%20%20Photo%20Gallery/index.html)   [live](https://icodethis.com/submissions/65416) |  Top Charts<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/03/03%20Top%20Charts/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/03/03%20Top%20Charts/index.html)   [live](https://icodethis.com/submissions/65999) 
 |  Cancel Form<br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/04/04/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/2023/04/04/index.html)   [live](https://icodethis.com/submissions/62770) |  Breadcrumbs <br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/04/15%20Breadcrumbs/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/2023/04/15%20Breadcrumbs/index.html)   [live](https://icodethis.com/submissions/63856) 
 |  Accordion 3 <br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/04/20%20Accordion%203/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/2023/04/20%20Accordion%203/index.html)   [live](https://icodethis.com/submissions/63888) |  Order Placed <br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/05/15/src/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/2023/05/15/src/index.html)   [live](https://icodethis.com/submissions/61592) 
-
-
-
-
-
-
+ |  Member Invite <br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/06/13/src/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/2023/06/13/src/index.html)   [live](https://icodethis.com/submissions/61864) |  Percentage Calculator <br> <img src="https://github.com/lapanikeugene/icodethis/blob/master/2023/06/14/screenshot.png" width="400"><br>[code](https://github.com/lapanikeugene/icodethis/blob/master/2023/2023/06/14/index.html)   [live](https://icodethis.com/submissions/62736) 
+ 
 
 
 
